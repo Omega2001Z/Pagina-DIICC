@@ -98,10 +98,12 @@
                             $sql = "select * from noticias ORDER BY id DESC"; // mejorar query falta nombre del que subio la noticia
                             $resultado = mysqli_query($conexion, $sql);
                             while ($mostrar = mysqli_fetch_array($resultado)) {
+                                if (strlen($mostrar['descripcion']) > 250 ){
+                                    $mostrar['descripcion'] = substr($mostrar['descripcion'],0, 250)."...";
+                                }
                             ?>
-                                <div class="card mb-3" style="width: 100%; height: 200px;">
+                                <a class="card mb-3" style="width: 100%; height: 200px;" <?php echo sprintf('href="noticia.php?id=%s"', $mostrar['id']);?>>
                                     <div class="row w-100">
-                                        <?php echo '<a href="noticia.php?id=' . $mostrar["id"] . '">'; ?>
                                         <div class="col-md-3">
                                             <img style="width: 200px; height: 200px;" src="data:image/jpg;base64,<?php echo base64_encode($mostrar["imagen"]); ?>">
                                         </div>
@@ -109,13 +111,14 @@
                                             <div class="let card-body">
                                                 <h4 class="card-title"><?php echo $mostrar['titulo']; ?> </h4>
                                                 <p class="card-text"><?php echo $mostrar['descripcion']; ?></p>
-                                                <p class="card-text"><small class="text-muted"><?php echo $mostrar['fecha']; ?></small></p>
-                                                <p class="card-text"><small class="text-muted"><?php echo "Autor: ",$mostrar['correo']; ?></small></p>
+                                                <div class="d-flex flex-row justify-content-between">
+                                                    <p class="card-text"><small class="text-muted"><?php echo $mostrar['fecha']; ?></small></p>
+                                                    <p class="card-text"><small class="text-muted"><?php echo "Autor: ",$mostrar['correo']; ?></small></p>    
+                                                </div>    
                                             </div>
                                         </div>
-                                        <?php '</a>' ?>
                                     </div>
-                                </div>
+                                </a>
                                 <hr class="solid" style="border-top: 3px solid #bbb;">
                             <?php } ?>
                         </div>

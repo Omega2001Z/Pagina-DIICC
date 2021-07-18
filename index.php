@@ -220,124 +220,80 @@
                     </div>
                 </div>
                 <div class="row">
+                    <?php
+                        date_default_timezone_set('UTC');
+                        setlocale(LC_ALL, 'ES');
+                        $sql = "SELECT * FROM `eventos` WHERE fecha > CURDATE() ORDER BY fecha ASC LIMIT 6"; // mejorar query falta nombre del que subio la noticia
+                        $resultado = mysqli_query($conexion, $sql);
+                        $i = 0;
+                        $data = array();
+                        while ($mostrar = mysqli_fetch_array($resultado)){
+                            #$mostrar['fecha'] = new DateTime($mostrar['fecha']);
+                            $mostrar['hora_inicio'] = new DateTime($mostrar['hora_inicio']);
+                            $mostrar['hora_termino'] = new DateTime($mostrar['hora_termino']);
+                            array_push($data, $mostrar);
+                        }
+
+                    ?>
                     <div class="col-md-6 col-sm-12 col-xs-12">
-                        <div class="single-event mb-35">
-                            <div class="event-date">
-                                <h3><a href="#">20<span>Octubre</span></a></h3>
-                            </div>
-                            <div class="event-content text-left">
-                                <div class="event-content-left">
-                                    <h4><a href="#">COLOQUIO INFORMÁTICO</a></h4>
-                                    <ul>
-                                        <li><i class="fa fa-clock-o"></i>9.00 AM - 12.00 AM</li>
-                                        <li><i class="fa fa-map-marker"></i>Auditorio Geología</li>
-                                    </ul>
+                        <?php 
+                        foreach(array_slice($data, 0 ,count($data)/2) as $m){ 
+                            echo sprintf(
+                                '
+                                <div class="single-event mb-35">
+                                    <div class="event-date">
+                                        <h3><a>%s<span>%s</span></a></h3>
+                                    </div>
+                                    <div class="event-content text-left">
+                                        <div class="event-content-left">
+                                            <h4><a href="#">%s</a></h4>
+                                            <ul>
+                                                <li><i class="fa fa-clock-o"></i>%s - %s</li>
+                                                <li><i class="fa fa-map-marker"></i>%s</li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
-                                <!--<div class="event-content-right">
-                                    <a class="default-btn" href="event-details.html">Entérate</a>
-                                </div>-->
-                            </div>
-                        </div>
-                        <div class="single-event mb-35">
-                            <div class="event-date">
-                                <h3><a href="#">3<span>Noviembre</span></a></h3>
-                            </div>
-                            <div class="event-content text-left">
-                                <div class="event-content-left">
-                                    <h4><a href="#">WORKSHOP DE PHP</a></h4>
-                                    <ul>
-                                        <li><i class="fa fa-clock-o"></i>8.00 AM - 10.00 AM</li>
-                                        <li><i class="fa fa-map-marker"></i>Laboratorio Melquiades</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single-event mb-35">
-                            <div class="event-date">
-                                <h3><a href="#">13<span>Noviembre</span></a></h3>
-                            </div>
-                            <div class="event-content text-left">
-                                <div class="event-content-left">
-                                    <h4><a href="#">CHARLA DEEP LEARNING</a></h4>
-                                    <ul>
-                                        <li><i class="fa fa-clock-o"></i>9.00 AM - 12.00 AM</li>
-                                        <li><i class="fa fa-map-marker"></i>Auditorio Informática</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single-event">
-                            <div class="event-date">
-                                <h3><a href="#">21<span>Noviembre</span></a></h3>
-                            </div>
-                            <div class="event-content text-left">
-                                <div class="event-content-left">
-                                    <h4><a href="#">PRESENTACIÓN TESISTAS</a></h4>
-                                    <ul>
-                                        <li><i class="fa fa-clock-o"></i>9.00 AM - 11.00 AM</li>
-                                        <li><i class="fa fa-map-marker"></i>Auditorio Informática</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                                ',
+                                strftime('%d',strtotime($m['fecha'])),
+                                strftime('%B',strtotime($m['fecha'])),
+                                $m['nombre'],
+                                $m['hora_inicio']->format('H:i'),
+                                $m['hora_termino']->format('H:i'),
+                                $m['lugar']
+                            );
+                        }
+                        ?>
                     </div>
                     <div class="col-md-6 hidden-sm hidden-xs">
-                        <div class="single-event mb-35">
-                            <div class="event-date">
-                                <h3><a href="#">30<span>Noviembre</span></a></h3>
-                            </div>
-                            <div class="event-content text-left">
-                                <div class="event-content-left">
-                                    <h4><a href="#">WORKSHOP MatLab</a></h4>
-                                    <ul>
-                                        <li><i class="fa fa-clock-o"></i>9.00 AM - 13.00 PM</li>
-                                        <li><i class="fa fa-map-marker"></i>SALA DIICC-2</li>
-                                    </ul>
+                    <?php 
+                        foreach(array_slice($data,count($data)/2) as $m){
+                            echo sprintf(
+                                '
+                                <div class="single-event mb-35">
+                                    <div class="event-date">
+                                        <h3><a>%s<span>%s</span></a></h3>
+                                    </div>
+                                    <div class="event-content text-left">
+                                        <div class="event-content-left">
+                                            <h4><a href="#">%s</a></h4>
+                                            <ul>
+                                                <li><i class="fa fa-clock-o"></i>%s - %s</li>
+                                                <li><i class="fa fa-map-marker"></i>%s</li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="single-event mb-35">
-                            <div class="event-date">
-                                <h3><a href="#">4<span>Diciembre</span></a></h3>
-                            </div>
-                            <div class="event-content text-left">
-                                <div class="event-content-left">
-                                    <h4><a href="#">CHARLA DE ROBÓTICA</a></h4>
-                                    <ul>
-                                        <li><i class="fa fa-clock-o"></i>9.00 AM - 12.00 AM</li>
-                                        <li><i class="fa fa-map-marker"></i>Auditorio Ing. Minas</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single-event mb-35">
-                            <div class="event-date">
-                                <h3><a href="#">20<span>Diciembre</span></a></h3>
-                            </div>
-                            <div class="event-content text-left">
-                                <div class="event-content-left">
-                                    <h4><a href="#">ACCION DE GRACIAS - INFORMÁTICA</a></h4>
-                                    <ul>
-                                        <li><i class="fa fa-clock-o"></i>9.00 AM - 12.00 AM</li>
-                                        <li><i class="fa fa-map-marker"></i>Departamento Informática</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single-event">
-                            <div class="event-date">
-                                <h3><a href="#">22<span>Diciembre </span></a></h3>
-                            </div>
-                            <div class="event-content text-left">
-                                <div class="event-content-left">
-                                    <h4><a href="#">EVENTO NAVIDAD</a></h4>
-                                    <ul>
-                                        <li><i class="fa fa-clock-o"></i>9.00 AM - 12.00 AM</li>
-                                        <li><i class="fa fa-map-marker"></i>Departamento Informática</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                                ',
+                                strftime('%d',strtotime($m['fecha'])),
+                                strftime('%B',strtotime($m['fecha'])),
+                                $m['nombre'],
+                                $m['hora_inicio']->format('H:i'),
+                                $m['hora_termino']->format('H:i'),
+                                $m['lugar']
+                            );
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -379,63 +335,45 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="single-blog">
-                            <div class="blog-img">
-                                <a href="#"><img src="img/blog/blog1.jpg" alt="blog"></a>
-                                <div class="blog-hover">
-                                    <a href="#"><i class="fa fa-link"></i></a>
+                <?php
+                        $sql = "SELECT * FROM `publicaciones` ORDER BY fecha ASC LIMIT 3"; // mejorar query falta nombre del que subio la noticia
+                        $resultado = mysqli_query($conexion, $sql);
+                        while ($mostrar = mysqli_fetch_array($resultado)){
+                            echo sprintf(
+                                '
+                                <div class="col-md-4 col-sm-6 col-xs-12">
+                                    <div class="single-blog">
+                                        <div class="blog-img">
+                                            <a href="%s"><img src="data:image/jpg;base64,%s" alt="blog"></a>
+                                            <div class="blog-hover">
+                                                <a href="%s"><i class="fa fa-link"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="blog-content">
+                                            <div class="blog-top">
+                                                <p>Escrito por %s / %s</p>
+                                            </div>
+                                            <div class="blog-bottom">
+                                                <h2><a href="%s">%s</a></h2>
+                                                <a href="%s">Leer más...</a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="blog-content">
-                                <div class="blog-top">
-                                    <p>Escrito por Pedro Martínez / 20-01-2020</p>
-                                </div>
-                                <div class="blog-bottom">
-                                    <h2><a href="#">TÍTULO DE LA PUBLICACIÓN</a></h2>
-                                    <a href="#">Leer más...</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="single-blog">
-                            <div class="blog-img">
-                                <a href="#"><img src="img/blog/blog2.png" alt="blog"></a>
-                                <div class="blog-hover">
-                                    <a href="#"><i class="fa fa-link"></i></a>
-                                </div>
-                            </div>
-                            <div class="blog-content">
-                                <div class="blog-top">
-                                    <p>Escrito por Pedro Martínez / 20-01-2020</p>
-                                </div>
-                                <div class="blog-bottom">
-                                    <h2><a href="#">TÍTULO DE LA PUBLICACIÓN</a></h2>
-                                    <a href="#">Leer más...</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 hidden-sm col-xs-12">
-                        <div class="single-blog">
-                            <div class="blog-img">
-                                <a href="#"><img src="img/blog/blog3.jpg" alt="blog"></a>
-                                <div class="blog-hover">
-                                    <a href="#"><i class="fa fa-link"></i></a>
-                                </div>
-                            </div>
-                            <div class="blog-content">
-                                <div class="blog-top">
-                                    <p>Escrito por Pedro Martínez / 20-01-2020</p>
-                                </div>
-                                <div class="blog-bottom">
-                                    <h2><a href="#">TÍTULO DE LA PUBLICACIÓN</a></h2>
-                                    <a href="#">Leer más...</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                ',
+                                $mostrar['acceso'],
+                                base64_encode($mostrar["imagen"]),
+                                $mostrar['acceso'],
+                                $mostrar['autor'],
+                                $mostrar['fecha'],
+                                $mostrar['acceso'],
+                                $mostrar['titulo'],
+                                $mostrar['acceso']
+                            );
+                        }
+
+                    ?>
+                    
                 </div>
             </div>
         </div>

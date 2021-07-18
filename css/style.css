@@ -2108,6 +2108,7 @@ textarea {
 .blog-sidebar {
     margin-top: 0px;
 }
+.single-post-img a img{ width: 95px !important; height: 84px !important;}
 .single-post-img a{float: left; margin-right: 20px; position: relative}
 .single-post-img a:after{
     position: absolute;
@@ -2162,9 +2163,6 @@ textarea {
     color: #fff;
     background: #254C5A;
     border: 1px solid #254C5A;
-}
-.blog-details-area {
-    margin-top: -150px;
 }
 .blog-details-content{padding-top: 30px}
 .blog-details-content h3{
@@ -2260,7 +2258,11 @@ textarea {
     background-color: #ebebeb;
 }
 #malla {
+    width: 100%;
     margin-bottom: 100px;
+}
+#malla-dialog{
+    width: 100% !important;
 }
 /*----------------------------------------*/ 
 /*  10. Subscribe CSS

@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates|Poppins&display=swap');
+	*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		/*font-family: 'Montserrat Alternates', sans-serif;*/
+        font-family: Arial, Helvetica, sans-serif;
+	}
+	body{
+		background-size: 100vw 100vh;
+		background-repeat: no-repeat;
+	}
+	.capa{
+		position: fixed;
+		width: 100%;
+		height: 100vh;
+		background: rgba(0,0,0,0.2);
+		z-index: -1;
+		top: 0;left: 0;
+	}
+	/*Estilos para el encabezado*/
+
+	
+	.header{
+		width: 100%;
+		height: 100px;
+		background: rgba(0,0,0,0.8);
+		/*position: fixed;*/
+		top: 0;left: 0;
+	}
+	.container{
+		width: 95%;
+		max-width: 1200px;
+		margin: auto;
+	}
+	.container .btn-menu, .logo{
+		float: left;
+		line-height:100px;
+        margin-top: 10px;
+	}
+	.container .btn-menu label{
+		color: #fff;
+		font-size: 35px;
+		cursor: pointer;
+	}
+	.logo img{
+        margin-top: 5px;
+		margin-left: 10px;
+	}
+	.container .menu{
+		float: right;
+		line-height: 100px;
+	}
+	.container .menu a{
+		display: inline-block;
+		padding: 15px;
+		line-height: normal;
+		text-decoration: none;
+		color: #fff;
+		transition: all 0.3s ease;
+		border-bottom: 2px solid transparent;
+		font-size: 15px;
+		margin-right: 5px;
+	}
+	.container .menu a:hover{
+		border-bottom: 2px solid #c7c7c7;
+		padding-bottom: 5px;
+	}
+	/*Fin de Estilos para el encabezado*/
+
+	/*Menù lateral*/
+	#btn-menu{
+		display: none;
+	}
+	.container-menu{
+		position: absolute;
+		background: rgba(0,0,0,0.5);
+		backdrop-filter: blur(4px);
+		width: 100%;
+		height: 100%;
+		top: 0;left: 0;
+		transition: all 500ms ease;
+		opacity: 0;
+		visibility: hidden;
+		z-index: 9999;
+	}
+	#btn-menu:checked ~ .container-menu{
+		opacity: 1;
+		visibility: visible;
+	}
+	.cont-menu{
+		width: 100%;
+		max-width: 250px;
+		background: rgba(0,0,0,0.8);
+		height: 100%;
+		position: relative;
+		transition: all 500ms ease;
+		transform: translateX(-100%);
+	}
+
+	#btn-menu:checked ~ .container-menu .cont-menu{
+		transform: translateX(0%);
+	}
+	.cont-menu nav{
+		transform: translateY(15%);
+	}
+	.cont-menu nav a{
+		display: block;
+		text-decoration: none;
+		padding: 20px;
+		color: #c7c7c7;
+		border-left: 5px solid transparent;
+		transition: all 400ms ease;
+	}
+	.cont-menu nav a:hover{
+		border-left: 5px solid #c7c7c7;
+		background: #1f1f1f;
+	}
+	.cont-menu label{
+		position: absolute;
+		right: 5px;
+		top: 10px;
+		color: #fff;
+		cursor: pointer;
+		font-size: 18px;
+	}
+	/*Fin de Menù lateral*/
+
+	.container-center{
+		position:relative;
+		width: 90%;
+		height: 100%;
+		background: rgb(238, 238, 238);
+		margin: auto;
+		margin-top: -270px;
+		border-radius: 15px;
+	}
+	section{
+		margin-top: 25px;
+	}
+
+	.container-Noticias{
+		margin: auto;
+		padding-top: 40px;
+		padding-bottom: 50px;
+	}
+	.container-boton{
+		padding-bottom: 25px;
+		text-align: right;
+		width: 90%;
+		margin: auto;
+	}
+	.container-boton .btn{
+		width: 150px;
+		height: 35px;
+		background-color: steelblue;
+	}
+	.container-boton .btn:hover{
+		transform: scale(1.15);
+    	cursor: pointer;
+    	transition: 2s;
+		background-color: rgb(123, 216, 245);
+	} 
+
+	.table{
+		width: 90% !important;
+		margin: auto !important;
+		
+	}
+	.table td{
+		padding-top: 10px;
+	}
+	
+	.tbody{
+		background-color: rgba(216, 216, 216, 0.8);
+	}
+
+	.fondo img{
+		width: 100%;
+		height: 600px;
+		margin-top: -25px;
+	}
+	.container-Noticias .table .bi{
+		font-size: 25px;
+		padding-right: 10px;
+	}
+
+	.container-Noticias .table .btn-group:hover{
+    	cursor: pointer;
+	}

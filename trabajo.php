@@ -33,195 +33,43 @@
         <div class="blog-area pt-150 pb-150">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="single-blog mb-60">
-                            <div class="blog-img">
-                                <a href="#"><img src="img/blog/blog1.jpg" alt="blog"></a>
-                                <div class="blog-hover">
-                                    <i class="fa fa-link"></i>
-                                </div>
-                            </div>
-                            <div class="blog-content">
-                                <div class="blog-top">
-                                    <p><span class="">2020/xx/xx</span> por <span class="post-autor">compañía x</span></p>
-                                </div>
-                                <div class="blog-bottom">
-                                    <p class="text-justify">Click aquí para buscar pega</p>
-                                    <div class="container-bottom">
-                                        <a href="postular-trabajo.php" class="btn btn-primary">Ir a la página</a>
+                    <?php
+                        $sql = "SELECT * FROM `trabajos` ORDER BY fecha ASC"; // mejorar query falta nombre del que subio la noticia
+                        $resultado = mysqli_query($conexion, $sql);
+                        while ($mostrar = mysqli_fetch_array($resultado)){
+
+                            echo sprintf(
+                                '
+                                <div class="col-md-4 col-sm-6 col-xs-12">
+                                    <div class="single-blog mb-60">
+                                        <div class="blog-img">
+                                            <a href="postular-trabajo.php?id=%s"><img src="data:image/jpg;base64,%s" alt="blog"></a>
+                                            <div class="blog-hover">
+                                                <i class="fa fa-link"></i>
+                                            </div>
+                                        </div>
+                                        <div class="blog-content">
+                                            <div class="blog-top">
+                                                <p><span class="post-autor">%s</span></p>
+                                            </div>
+                                            <div class="blog-bottom">
+                                                <h2><p class="text-justify">%s</p></h2>
+                                                <div class="container-bottom">
+                                                    <a href="postular-trabajo.php?id=%s" class="btn btn-primary">Ir a la página</a>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="single-blog mb-60">
-                            <div class="blog-img">
-                                <a href="#"><img src="img/blog/blog2.png" alt="blog"></a>
-                                <div class="blog-hover">
-                                    <i class="fa fa-link"></i>
-                                </div>
-                            </div>
-                            <div class="blog-content">
-                                <div class="blog-top">
-                                    <p><span class="">2020/xx/xx</span> por <span class="post-autor">compañía x</span></p>
-                                </div>
-                                <div class="blog-bottom">
-                                    <p class="text-justify">Click aquí para buscar pega</p>
-                                    <div class="container-bottom">
-                                        <a href="postular-trabajo.php" class="btn btn-primary">Ir a la página</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="single-blog mb-60">
-                            <div class="blog-img">
-                                <a href="#"><img src="img/blog/blog3.jpg" alt="blog"></a>
-                                <div class="blog-hover">
-                                    <i class="fa fa-link"></i>
-                                </div>
-                            </div>
-                            <div class="blog-content">
-                                <div class="blog-top">
-                                    <p><span class="">2020/xx/xx</span> por <span class="post-autor">compañía x</span></p>
-                                </div>
-                                <div class="blog-bottom">
-                                    <p class="text-justify">Click aquí para buscar pega</p>
-                                    <div class="container-bottom">
-                                        <a href="postular-trabajo.php" class="btn btn-primary">Ir a la página</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="single-blog mb-60">
-                            <div class="blog-img">
-                                <a href="#"><img src="img/blog/blog4.jpg" alt="blog"></a>
-                                <div class="blog-hover">
-                                    <i class="fa fa-link"></i>
-                                </div>
-                            </div>
-                            <div class="blog-content">
-                                <div class="blog-top">
-                                    <p><span class="">2020/xx/xx</span> por <span class="post-autor">compañía x</span></p>
-                                </div>
-                                <div class="blog-bottom">
-                                    <p class="text-justify">Click aquí para buscar pega</p>
-                                    <div class="container-bottom">
-                                        <a href="postular-trabajo.php" class="btn btn-primary">Ir a la página</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="single-blog mb-60">
-                            <div class="blog-img">
-                                <a href="#"><img src="img/blog/blog5.jpg" alt="blog"></a>
-                                <div class="blog-hover">
-                                    <i class="fa fa-link"></i>
-                                </div>
-                            </div>
-                            <div class="blog-content">
-                                <div class="blog-top">
-                                    <p><span class="">2020/xx/xx</span> por <span class="post-autor">compañía x</span></p>
-                                </div>
-                                <div class="blog-bottom">
-                                    <p class="text-justify">Click aquí para buscar pega</p>
-                                    <div class="container-bottom">
-                                        <a href="postular-trabajo.php" class="btn btn-primary">Ir a la página</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="single-blog mb-60">
-                            <div class="blog-img">
-                                <a href="#"><img src="img/blog/blog6.jpg" alt="blog"></a>
-                                <div class="blog-hover">
-                                    <i class="fa fa-link"></i>
-                                </div>
-                            </div>
-                            <div class="blog-content">
-                                <div class="blog-top">
-                                    <p><span class="">2020/xx/xx</span> por <span class="post-autor">compañía x</span></p>
-                                </div>
-                                <div class="blog-bottom">
-                                    <p class="text-justify">Click aquí para buscar pega</p>
-                                    <div class="container-bottom">
-                                        <a href="postular-trabajo.php" class="btn btn-primary">Ir a la página</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 hidden-xs">
-                        <div class="single-blog">
-                            <div class="blog-img">
-                                <a href="#"><img src="img/blog/blog7.jpg" alt="blog"></a>
-                                <div class="blog-hover">
-                                    <i class="fa fa-link"></i>
-                                </div>
-                            </div>
-                            <div class="blog-content">
-                                <div class="blog-top">
-                                    <p><span class="">2020/xx/xx</span> por <span class="post-autor">compañía x</span></p>
-                                </div>
-                                <div class="blog-bottom">
-                                    <p class="text-justify">Click aquí para buscar pega</p>
-                                    <div class="container-bottom">
-                                        <a href="postular-trabajo.php" class="btn btn-primary">Ir a la página</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 hidden-xs">
-                        <div class="single-blog">
-                            <div class="blog-img">
-                                <a href="#"><img src="img/blog/blog8.jpg" alt="blog"></a>
-                                <div class="blog-hover">
-                                    <i class="fa fa-link"></i>
-                                </div>
-                            </div>
-                            <div class="blog-content">
-                                <div class="blog-top">
-                                    <p><span class="">2020/xx/xx</span> por <span class="post-autor">compañía x</span></p>
-                                </div>
-                                <div class="blog-bottom">
-                                    <p class="text-justify">Click aquí para buscar pega</p>
-                                    <div class="container-bottom">
-                                        <a href="postular-trabajo.php" class="btn btn-primary">Ir a la página</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 hidden-sm col-xs-12">
-                        <div class="single-blog">
-                            <div class="blog-img">
-                                <a href="#"><img src="img/blog/blog9.jpg" alt="blog"></a>
-                                <div class="blog-hover">
-                                    <i class="fa fa-link"></i>
-                                </div>
-                            </div>
-                            <div class="blog-content">
-                                <div class="blog-top">
-                                    <p><span class="">2020/xx/xx</span> por <span class="post-autor">compañía x</span></p>
-                                </div>
-                                <div class="blog-bottom">
-                                    <p class="text-justify">Click aquí para buscar pega</p>
-                                    <div class="container-bottom">
-                                        <a href="postular-trabajo.php" class="btn btn-primary">Ir a la página</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                ',
+                                $mostrar['id'],
+                                base64_encode($mostrar["imagen"]),
+                                strftime('Publicado el %d/%m/%Y a las %I:%M %p', strtotime($mostrar['fecha'])),
+                                $mostrar['cargo'],
+                                $mostrar['id'],
+                            );
+                        }
+                    ?>
                 </div>
             </div>
         </div>

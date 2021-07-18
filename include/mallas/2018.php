@@ -1,4 +1,4 @@
-<div class="course-area" id="malla">
+<div class="course-area w-100" id="malla">
     <!--pt-150 pb-150"-->
     <div class="container">
         <div class="row">
@@ -131,10 +131,10 @@
                 </table>
                 <!-- Tabla End -->
             </div>
-            <!--Modals-->
+            <!--Modals
             <div class="modal fade" id="M-CB11115" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -252,11 +252,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CB12115" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -270,11 +268,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CB21115" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -288,11 +284,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CB22115" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -306,11 +300,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-LI31115" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -324,11 +316,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-LI32115" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -342,11 +332,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-LI41115" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -360,11 +348,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-LI42115" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -378,11 +364,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CI51115" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -396,11 +380,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CI52115" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -414,11 +396,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CI61115" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -432,11 +412,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CI62115" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -450,11 +428,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CB11215" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -468,11 +444,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CB12215" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -486,11 +460,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-LI31215" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -504,11 +476,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-LI21215" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -522,11 +492,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CB31315" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -540,11 +508,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CB32215" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -558,11 +524,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-LI41215" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -576,11 +540,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CI42215" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -594,11 +556,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CI51215" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -612,11 +572,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CI52215" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -630,11 +588,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CI61215" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -648,11 +604,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CI62215" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -666,11 +620,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CB11315" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -684,11 +636,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CB12315" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -702,11 +652,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CB21315" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -720,11 +668,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CB22315" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -738,11 +684,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CB22215" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -756,11 +700,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-LI32315" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -774,11 +716,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-LI41315" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -792,11 +732,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CI42315" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -810,11 +748,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CI51315" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -828,11 +764,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CI52315" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -846,11 +780,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CI61315" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -864,11 +796,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CI11415" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -882,11 +812,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CI12415" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -900,11 +828,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CI21415" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -918,11 +844,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CI22415" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -936,11 +860,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CI31415" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -954,11 +876,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CI32415" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -972,11 +892,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CI41415" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -990,11 +908,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CI42415" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -1008,11 +924,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CI51415" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -1026,11 +940,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CI52415" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -1044,11 +956,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-LI12415" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -1062,11 +972,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CI12515" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -1080,11 +988,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CI21515" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -1098,11 +1004,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CI22515" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -1116,11 +1020,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CI31515" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -1134,11 +1036,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CI32515" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -1152,11 +1052,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CI41515" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -1170,11 +1068,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CI42515" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -1188,11 +1084,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CI51515" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -1206,11 +1100,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CI52515" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -1224,11 +1116,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CI11615" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -1242,11 +1132,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CI12615" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -1260,11 +1148,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CI21615" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -1278,11 +1164,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CI22615" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -1296,11 +1180,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CI31615" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -1314,11 +1196,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CI32615" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -1332,11 +1212,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CI41615" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -1350,11 +1228,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CI42615" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -1368,11 +1244,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CI51615" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -1386,11 +1260,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CI52615" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -1404,11 +1276,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CI21715" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -1422,11 +1292,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-CI31715" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -1440,11 +1308,9 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
-            <!--Modals-->
             <div class="modal fade" id="M-PP" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
+                    
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -1458,7 +1324,7 @@
                     </div>
                 </div>
             </div>
-            <!-- EndModal -->
+            EndModal -->
 
             <!-- Leyenda Start -->
             <table class="table">

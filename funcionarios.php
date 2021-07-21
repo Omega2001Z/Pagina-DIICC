@@ -33,45 +33,25 @@
         <div class="teacher-area pt-150 pb-105">
             <div class="container">
                 <div class="row">
+                    <?php
+                        $sql = "select * from funcionarios WHERE es_academico = 0";
+                        $resultado = mysqli_query($conexion, $sql);
+                        while ($mostrar = mysqli_fetch_array($resultado)) {
+                    ?>
                     <div class="col-md-3 col-sm-4 col-xs-12">
                         <div class="single-teacher mb-45">
                             <div class="single-teacher-img">
-                                <a><img src="img/teacher/teacher1.jpg" alt="teacher"></a>  
+                                <a><img src=<?php echo fromroot($file, $mostrar['img_path']);?> alt="teacher"></a>  
                             </div>
                             <div class="single-teacher-content text-center">
-                                <h2><a>Carlos Ortiz </a></h2>
-                                <h4>Ingeniero en sistema</h4>
-                                <h4>carlos.ortizdezarate@uda.cl</h4>
+                                <h2><a><?php echo $mostrar['Nombre'];?></a></h2>
+                                <h4><?php echo $mostrar['cargo'];?></h4>
+                                <h4><?php echo $mostrar['correo'];?></h4>
                                 
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-4 col-xs-12">
-                        <div class="single-teacher mb-45">
-                            <div class="single-teacher-img">
-                                <a><img src="img/officials/officials2.jpg" alt="teacher"></a>  
-                            </div>
-                            <div class="single-teacher-content text-center">
-                                <h2><a>Jeimy Parra Campusano</a></h2>
-                                <h4>Secretaria del Departamento</h4>
-                                <h4>jeimy.parra@uda.cl</h4>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-4 col-xs-12">
-                        <div class="single-teacher mb-45">
-                            <div class="single-teacher-img">
-                                <a><img src="img/officials/officials3.jpg" alt="teacher"></a>  
-                            </div>
-                            <div class="single-teacher-content text-center">
-                                <h2><a>Jorge Saavedra Gúzman</a></h2>
-                                <h4>Personal Asistente</h4>
-                                <h4>choche73@uda.cl</h4>
-                                
-                            </div>
-                        </div>
-                    </div>
+                    <?php } ?>
                    <!-- <div class="col-md-3 col-sm-4 col-xs-12">
                         <div class="single-teacher mb-45">
                             <div class="single-teacher-img">

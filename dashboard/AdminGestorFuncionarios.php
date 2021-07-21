@@ -77,7 +77,7 @@
                         </thead>
                         <tbody class="tbody">
                             <?php
-                            $sql = "select * from funcionarios where es_academico = 2";
+                            $sql = "select * from funcionarios where es_academico = 0";
                             $resultado = mysqli_query($conexion, $sql);
                             while ($mostrar = mysqli_fetch_array($resultado)) {
                             ?>
@@ -97,15 +97,8 @@
                                      <td >
                                         <p class="card-text" style="text-align: center;"><small class="text-muted"><?php echo $mostrar['descripcion']; ?></small></p>
                                     </td>
-                                     <td>
-                                        <p class="card-text" style="text-align: center;"><small class="text-muted"><?php echo $mostrar['grado_academico']; ?></small></p>
-                                    </td>
-                                     <td>
-                                        <p class="card-text" style="text-align: center;"><small class="text-muted"><?php echo $mostrar['area_interes']; ?></small></p>
-                                    </td>
-                                    
-
-                                    <td style="text-align: center; "><img style="width: 150px; height: 150px; padding-left:25px;" src="data:image/jpg;base64,<?php echo base64_encode($mostrar["imagen"]); ?>"></td>
+                                     
+                                    <td style="text-align: center; "><img style="width: 150px; height: 150px; padding-left:25px;" src=<?php echo fromroot($file, $mostrar["img_path"]); ?>></td>
                                     
                                     
                                    

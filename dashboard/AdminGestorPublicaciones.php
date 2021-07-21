@@ -104,7 +104,7 @@
                             while ($mostrar = mysqli_fetch_array($resultado)) {
                             ?>
                                 <tr>
-                                    <td style="text-align: center;"><img style="width: 150px; height: 150px; padding-left:25px;" src="data:image/jpg;base64,<?php echo base64_encode($mostrar["imagen"]); ?>"></td>
+                                    <td style="text-align: center;"><img style="width: 150px; height: 150px; padding-left:25px;" src=<?php echo fromroot($file, $mostrar["img_path"]); ?>></td>
                                     <td>
                                         <h4 class="card-title" style="text-align: center;"><?php echo $mostrar['titulo']; ?> </h4>
                                     </td>

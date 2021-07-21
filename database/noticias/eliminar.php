@@ -1,16 +1,12 @@
 <?php
-// Datos login
-$id       = $_POST['id'];
+session_start();
+$file = __FILE__;
+include_once "../../include/functions.php";
+include_once "../../config/config.php";
 
-require_once 'config.php';
+$sql = "DELETE FROM noticias WHERE id = %s";
+$result = $conexion->query(sprintf($sql,  $_GET['id']));
 
-// Insertar usuario
-$sql = $conexion->prepare(
-	"DELETE FROM `noticias` WHERE `noticias`.`id` = {$id};;"
-);
-$sql->execute();
-
-$Exito = "La eliminacion de la noticias se ha realizado con éxito. ";
-include_once "AdminGestorDeNoticias.php";
+header(sprintf('Location:%s', fromroot($file, "dashboard/AdminGestorNoticias.php", True)));
 
 ?>

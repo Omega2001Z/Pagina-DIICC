@@ -40,7 +40,9 @@
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
+                                <form action="../database/publicacion/crear.php" method="POST" enctype="multipart/form-data">
                                 <div class="modal-body">
+                                    <form action="../database/publicacion/crear.php" method="POST">
                                     <div style="margin-left: 110px;" class="form-field "><br>
                                         <input   name="imagen" type="file" required>
                                     </div>
@@ -50,8 +52,22 @@
                                     <div class="form-field  " style="text-align:center; margin-top: 5px;">
                                         <input style="width: 200px; text-align:center;" id="fecha" name="fecha" class="input-text js-input" placeholder="Fecha" type="text" required>
                                     </div>
-                                    <div class="form-field  " style="text-align:center; margin-top: 5px;">
-                                        <input style="width: 200px; text-align:center;" id="autor" name="autor" class="input-text js-input" placeholder="Autor" type="text" required>
+                                    <div class="form-field  " style="text-align:center; margin-top: 5px;margin-right: 40px;">
+                                         
+                                        
+                                            <label>Autor:</label>
+                                            <select name="autor" id="autor">
+                                                <?php 
+                                                $sql = "select nombre,id from funcionarios where es_academico=1;";
+                                                $resultado = mysqli_query($conexion, $sql);
+                                                while ($mostrar = mysqli_fetch_array($resultado)) {
+                                                   echo sprintf(' <option value="%s" >%s</option>',$mostrar['id'],$mostrar['nombre']);
+                                                }?>
+                                               
+                                            </select>
+
+                                        
+
                                     </div>
                                     <div class="form-field  " style="text-align:center; margin-top: 5px;">
                                         <input style="width: 200px; text-align:center;" id="revision" name="revision" class="input-text js-input" placeholder="Revision" type="text" required>
@@ -59,13 +75,14 @@
                                     <div class="form-field  " style="text-align:center; margin-top: 5px;">
                                         <input style="width: 200px; text-align:center;" id="acceso" name="acceso" class="input-text js-input" placeholder="Acceso" type="text" required>
                                     </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn " data-dismiss="modal">Cerrar</button>
-                                    <button type="button" class="btn">Ingresar</button>
+                                    <div style="margin-top:30px; text-align: center;" class="container-ingresar">
+                                        <button type="button" class="btn">Ingresar</button>
+                                    </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
                     <table class="table">

@@ -42,6 +42,7 @@
                                 </div>
                                 
                                  <div class="modal-body">
+                                    <form action="../database/funcionarios/crea.php" method="POST" enctype="multipart/form-data">
                                     <div class="form-field  " style="text-align:center; margin-top: 5px;">
                                         <input style="width: 200px; text-align:center;" id="nombre" name="nombre" class="input-text js-input" placeholder="Nombre" type="text" required>
                      
@@ -53,7 +54,10 @@
                                         <input style="width: 200px; text-align:center;" id="fono" name="fono" class="input-text js-input" placeholder="Fono" type="text" required>
                                     </div>
                                     <div class="form-field  " style="text-align:center; margin-top: 5px;">
-                                        <input style="width: 200px; text-align:center;" id="descripcion" name="descripcion" class="input-text js-input" placeholder="Descripcion" type="text" required>
+                                        <input style="width: 200px; text-align:center;" id="cargo" name="cargo" class="input-text js-input" placeholder="Cargo" type="text" required>
+                                    </div>
+                                    <div class="form-field  " style="text-align:center; margin-top: 5px;">
+                                        <textarea style="width: 200px; text-align:center;" id="descripcion" name="descripcion" placeholder="Descripcion" required></textarea>
                                     </div>
                                     <div class="form-field  " style="text-align:center; margin-top: 5px;">
                                         <input style="width: 200px; text-align:center;" id="grado_academico" name="grado_academico" class="input-text js-input" placeholder="Grado Academico" type="text" required>
@@ -61,17 +65,13 @@
                                     <div class="form-field  " style="text-align:center; margin-top: 5px;">
                                         <input style="width: 200px; text-align:center;" id="area_interes" name="area_interes" class="input-text js-input" placeholder="Area de interes" type="text" required>
                                     </div>
-                                    <div class="form-field  " style="text-align:center; margin-top: 5px;">
-                                        <input style="width: 200px; text-align:center;" id="es_academico" name="es_academico" class="input-text js-input" placeholder="es_academico" type="text" required>
-                                    </div>
                                      <div style="margin-left: 110px;" class="form-field "><br>
                                          <input   name="imagen" type="file" required>
                                     </div>
-                                    
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn " data-dismiss="modal">Cerrar</button>
-                                    <button type="button" class="btn">Ingresar</button>
+                                    <div style="margin-top:30px; text-align: center;" class="container-ingresar">
+                                        <button type="button" class="btn">Ingresar</button>
+                                    </div>
+                                </form>
                                 </div>
                             </div>
                         </div>
@@ -84,7 +84,6 @@
                                 <th scope="col">Correo</th>
                                 <th scope="col">Fono</th>
                                 <th scope="col">Cargo</th>
-                                <th scope="col">Descripcion</th>
                                 <th scope="col">Grado Academico</th>
                                 <th scope="col">Area de Interes</th>
                                 <th scope="col">Imagen</th>
@@ -111,9 +110,6 @@
                                     </td>
                                     <td>
                                         <p class="card-text" style="text-align: center;"><small class="text-muted"><?php echo $mostrar['cargo']; ?></small></p>
-                                    </td>
-                                     <td >
-                                        <p class="card-text" style="text-align: center;"><small class="text-muted"><?php echo $mostrar['descripcion']; ?></small></p>
                                     </td>
                                      <td>
                                         <p class="card-text" style="text-align: center;"><small class="text-muted"><?php echo $mostrar['grado_academico']; ?></small></p>

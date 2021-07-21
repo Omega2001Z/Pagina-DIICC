@@ -7,6 +7,7 @@
             <a href="AdminGestorBT.php">Bolsa de trabajo</a>
             <a href="AdminGestorAcademicos.php">Academicos</a>
             <a href="AdminGestorFuncionarios.php">Funcionarios</a>
+            <a href="AdminGestorEventos.php">Eventos</a>
 		</nav>
 		<label for="btn-menu">✖️</label>
 	</div>

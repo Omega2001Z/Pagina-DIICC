@@ -40,28 +40,29 @@
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
+                                    
                                     <div class="modal-body">
+                                       <form action="../database/noticias/crear.php" method="POST" enctype="multipart/form-data">
                                         <div style="margin-left: 110px;" class="form-field "><br>
-                                            <input   name="imagen" type="file" required>
+                                            <input   name="img" type="file" required>
                                         </div>
                                         <div class="form-field  " style="text-align:center; margin-top: 5px;">
                                             <input style="width: 200px; text-align:center;" id="titulo" name="titulo" class="input-text js-input" placeholder="Titulo" type="text" required>
                                         </div>
                                         <div class="form-field  " style="text-align:center; margin-top: 5px;">
-                                            <input style="width: 200px; text-align:center;" id="fecha" name="fecha" class="input-text js-input" placeholder="Fecha" type="text" required>
-                     
+                                            <input type="hidden" style="width: 200px; text-align:center;" id="correo" name="correo" class="input-text js-input" value="<?php echo $_SESSION['usuario']->correo;?>" placeholder="Correo"  required>
                                         </div>
                                         <div class="form-field  " style="text-align:center; margin-top: 5px;">
-                                            <input style="width: 200px; text-align:center;" id="correo" name="correo" class="input-text js-input" placeholder="Correo" type="text" required>
+                                            <textarea style="width: 200px; text-align:center;" id="descripcion" name="descripcion" placeholder="Descripcion" required></textarea>
                                         </div>
-                                        <div class="form-field  " style="text-align:center; margin-top: 5px;">
-                                            <input style="width: 200px; text-align:center;" id="descripcion" name="descripcion" class="input-text js-input" placeholder="Descripcion" type="text" required>
+                                        <div style="margin-top:30px; text-align: center;" class="container-ingresar">
+                                            <button type="submit" class="btn">Ingresar</button>
                                         </div>
+                                        </form>
+                                        
                                     </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn " data-dismiss="modal">Cerrar</button>
-                                        <button type="button" class="btn">Ingresar</button>
-                                    </div>
+                                   
+                                    
                                 </div>
                             </div>
                         </div>
@@ -72,7 +73,6 @@
                                 <th scope="col">Imagen</th>
                                 <th scope="col">Titulo</th>
                                 <th scope="col">Fecha de publicacion</th>
-                                <th scope="col">Descripcion</th>
                                 <th scope="col">Correo</th>
                                 <th scope="col">Accion</th>
                             </tr>
@@ -84,15 +84,12 @@
                             while ($mostrar = mysqli_fetch_array($resultado)) {
                             ?>
                                 <tr>
-                                    <td style="text-align: center;"><img style="width: 150px; height: 150px; padding-left:25px;" src="data:image/jpg;base64,<?php echo base64_encode($mostrar["imagen"]); ?>"></td>
+                                <td style="text-align: center;"><img style="width: 150px; height: 150px; padding-left:25px;" src=<?php echo fromroot($file, $mostrar["img_path"]);?>></td>
                                     <td>
                                         <h4 style="text-align: center;"><?php echo $mostrar['titulo']; ?> </h4>
                                     </td>
                                     <td>
                                         <p style="text-align: center;"><small class="text-muted"><?php echo $mostrar['fecha']; ?></small></p>
-                                    </td>
-                                    <td>
-                                        <p style="text-align: center;"><small class="text-muted"><?php echo $mostrar['descripcion']; ?></small></p>
                                     </td>
 
                                     <td>
@@ -101,7 +98,7 @@
                                     <td>
                                         <div class="btn-group btn-group-sm" style="text-align: center;" role="group">
                                             <a class="btn btn-secondary"style="color:seagreen;" href="../dashboard/modificarN.php?id=<?php echo $mostrar['id']; ?>"><i class="bi bi-pencil"></i></a>
-                                            <a class="btn btn-danger" href="../database/noticias/eliminar.php"><i class="bi bi-x-circle"></i></a>
+                                            <a class="btn btn-danger" href="../database/noticias/eliminar.php?id=<?php echo $mostrar['id']; ?>"><i class="bi bi-x-circle"></i></a>
                                         </div>
                                     </td>
                                 </tr>
@@ -112,9 +109,6 @@
             </section>
         </div>
     </div>
-    <footer>
-            hola mundo
-    </footer>
 </body>
 
 <?php include_once fromroot($file, "include/dashboard/footer.php", TRUE); ?>

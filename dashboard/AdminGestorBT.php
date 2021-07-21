@@ -41,6 +41,7 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
+                                    <form action="../database/trabajo/crear.php" method="POST" enctype="multipart/form-data">
                                         <div style="margin-left: 110px;" class="form-field "><br>
                                             <input   name="imagen" type="file" required>
                                         </div>
@@ -53,12 +54,14 @@
                                         <div class="form-field  " style="text-align:center; margin-top: 5px;">
                                             <input style="width: 200px; text-align:center;" id="ciudad" name="ciudad" class="input-text js-input" placeholder="Ciudad" type="text" required>
                                         </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn " data-dismiss="modal">Cerrar</button>
+                                    
+                                    <div style="margin-top:30px; text-align: center;" class="container-ingresar">
                                         <button type="button" class="btn">Ingresar</button>
                                     </div>
+                                </form>
                                 </div>
+                                </div>   
+                              
                             </div>
                         </div>
                     </div>

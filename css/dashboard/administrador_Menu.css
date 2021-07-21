@@ -130,7 +130,7 @@
 		position:relative;
 		width: 90%;
 		height: 100%;
-		background: rgb(238, 238, 238);
+		background: rgb(238, 238, 238,0.4);
 		margin: auto;
 		margin-top: -270px;
 		border-radius: 15px;
@@ -176,10 +176,6 @@
 	}
 	.table td{
 		padding-top: 10px;
-	}
-	
-	.tbody{
-		background-color: rgba(216, 216, 216, 0.8);
 	}
 
 	.fondo img{
@@ -229,6 +225,9 @@
 		width: 90%;
 		margin: auto;
 	}
+	.tbody{
+		background-color: rgb(229, 231, 233);
+	}
 	thead th{
     	color: #FBFCFC;
     	text-align: center;
@@ -245,3 +244,10 @@
        height: 500px;
       
   	}
+  	.container-formulario{
+  		background-color: rgb(229, 231, 233);
+  		max-width: 800px;
+  		border-radius: 10px;
+  		max-height: 850px;
+  	}
+  	

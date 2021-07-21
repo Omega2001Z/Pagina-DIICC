@@ -89,7 +89,7 @@
                 <div class="blog-sidebar right text-left">
                     
                     <div class="text-center notice-left-wrapper">
-                        <h3>Admisión 2020aa</h3>
+                        <h3>Admisión 2022</h3>
                     </div>
                     <div class="single-blog-widget mb-50">
                         <iframe

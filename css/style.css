@@ -2707,7 +2707,17 @@ textarea {
     color: #fff;
     background: #254C5A;  
 }
-.teacher-details-content{margin-top: 26px}
+.teacher-details-content{width: 50%;}
+.teacher-details-img{
+    margin-right: 10px;
+    width: 450px;
+}
+.row-flex{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
 .teacher-details-content h2 {
     color: #303030;
     font-family: "Open Sans",sans-serif;
@@ -2840,6 +2850,7 @@ textarea {
     right: 0;
     width: 0;
 }
+
 /*----------------------------------------*/ 
 /*  16. Contact CSS
 /*----------------------------------------*/

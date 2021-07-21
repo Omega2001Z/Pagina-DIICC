@@ -10,7 +10,6 @@
 
     // Extraer contraseña
     $sql = sprintf('SELECT * FROM usuarios WHERE correo = "%s"', $userLogin);
-    echo $sql;
     $resultado = $conexion->query($sql);
 
     // Contraseña no encontrada

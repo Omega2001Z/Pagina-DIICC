@@ -36,27 +36,61 @@
                     </div>
                     <div class="col-md-4">
                         <div class="blog-sidebar right">
-                            <div class="single-blog-widget mb-47">
-                                <h3>Buscar Noticias</h3>
-                                <div class="blog-search">
-                                    <form id="search" action="#">
-                                        <input type="search" placeholder="Buscar..." name="search" />
-                                        <button type="submit">
-                                            <span><i class="fa fa-search"></i></span>
-                                        </button>
-                                    </form>
-                                </div>
-                            </div>
+                            
                             <div class="single-blog-widget mb-47">
                                 <h3>Noticias por año</h3>
-                                <ul>
-                                    <li><a href="noticias.html">2019 (10)</a></li>
-                                    <li><a href="noticias.html">2018 (12)</a></li>
-                                    <li><a href="noticias.html">2017 (08)</a></li>
-                                    <li><a href="noticias.html">2016 (15)</a></li>
-                                    <li><a href="noticias.html">2015 (20)</a></li>
-                                    <li><a href="noticias.html">2014 (23)</a></li>
-                                </ul>
+                                <!-- Accordion -->
+                                <div class="panel-group" id="accordion" role="tablist">
+                                    <?php
+                                    $cont=1;
+                                    $sql="SELECT * FROM `noticias` ORDER BY fecha DESC";
+                                    $resultado = mysqli_query($conexion, $sql);
+                                    $año_anterior='9999';
+                                    while($mostrar = mysqli_fetch_array($resultado)){
+                                            $año_actual=strftime('%Y', strtotime($mostrar['fecha']));
+                                    ?>
+
+                                    <?php
+                                            if ((strcmp($año_actual,$año_anterior))!==0){
+                                                $año_anterior=strftime('%Y', strtotime($mostrar['fecha']));
+                                                ?>
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading" role="tab" id="heading<?=$cont?>">
+                                                    <h4 class="panel-title">
+                                                        <a href="#collapse<?=$cont?>" data-toggle="collapse" data-parent="#accordion">
+                                                            <?php echo strftime('%Y', strtotime($mostrar['fecha']))?>
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                                <div id=collapse<?=$cont?> class="panel-collapse collapse">
+                                                    <div class="panel-body">
+                                                    
+                                                        <?php
+                                                            $sql2="SELECT * FROM `noticias`";
+                                                            $resultado2 = mysqli_query($conexion, $sql);
+                                                            while($mostrar2 = mysqli_fetch_array($resultado2)){
+                                                            ?>
+                                                            <?php
+                                                                if (strftime('%Y', strtotime($mostrar['fecha']))==strftime('%Y', strtotime($mostrar2['fecha']))){
+                                                                    $titulo=$mostrar2['titulo'];
+                                                                    $titulocorte=substr($titulo,0,31);
+                                                            ?>
+                                                            <br><h4><?php echo '<a href="noticia.php?id=' . $mostrar2["id"] . '">' . $titulocorte . '..</a>';?></h4><br>
+                                                            <?php
+                                                            }
+                                                            }
+                                                            ?>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <?php
+                                            }
+                                        ?>
+                                        <?php
+                                        $cont ++;
+                                    }
+                                    ?>
+                                </div>
                             </div>
                         </div>
                     </div>

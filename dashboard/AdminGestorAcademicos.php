@@ -1,64 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
 <?php
-session_start();
-$file = __FILE__;
-include_once "../include/functions.php";
-include_once "../config/config.php";
-?>
 
-<head>
-    <meta charset="UTF-8">
-    <title>Departamento de Informatica</title>
-    <link rel="stylesheet" href="../css/dashboard/administrador_Menu.css?v=<?php echo time(); ?>">
-    <link rel="stylesheet" href=<?php echo fromroot($file, "css/bootstrap.min.css"); ?>>
-    <link rel="stylesheet" href=<?php echo fromroot($file, "css/animate.css"); ?>>
-    <link rel="stylesheet" href=<?php echo fromroot($file, "css/meanmenu.css"); ?>>
-    <link rel="stylesheet" href=<?php echo fromroot($file, "css/magnific-popup.css");  ?>>
-    <link rel="stylesheet" href=<?php echo fromroot($file, "css/owl.carousel.min.css");  ?>>
-    <link rel="stylesheet" href=<?php echo fromroot($file, "css/font-awesome.min.css"); ?>>
-    <link rel="stylesheet" href=<?php echo fromroot($file, "css/et-line-icon.css"); ?>>
-    <link rel="stylesheet" href=<?php echo fromroot($file, "css/reset.css"); ?>>
-    <link rel="stylesheet" href=<?php echo fromroot($file, "css/ionicons.min.css"); ?>>
-    <link rel="stylesheet" href=<?php echo fromroot($file, "css/material-design-iconic-font.min.css"); ?>>
-    <link rel="stylesheet" href=<?php echo fromroot($file, "css/responsive.css"); ?>>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <script src=<?php echo fromroot($file, "js/vendor/modernizr-2.8.3.min.js"); ?>></script>
-</head>
+	session_start();
+    $file = __FILE__;
+    $pagetitle = "ACADEMICOS - DIICC UDA";
+    include_once "../config/config.php";
+    include_once "../include/functions.php";
+
+	if (!isset($_SESSION['usuario'])){
+		header(sprintf('Location:%s', fromroot($file, "index.php", True)));
+	}
+	include_once fromroot($file, "include/dashboard/head.php", TRUE);
+?>
 
 <body>
     <div class="container-contenido">
-        <header class="header">
-            <div class="container">
-                <div class="btn-menu">
-                    <label for="btn-menu">☰</label>
-                </div>
-                <div class="logo">
-                    <img src="../img/logo/logoudablanco2.png" alt="">
-                </div>
-                <nav class="menu">
-                    <a href="AdministradorMenu.html">Inicio</a>
-                    <a href="#">Mi perfil</a>
-                    <a href="#">Desconectarse</a>
-                </nav>
-            </div>
-        </header>
+        <?php include_once fromroot($file, "include/dashboard/header.php", TRUE); ?>
         <div class="capa"></div>
         <!--	--------------->
         <input type="checkbox" id="btn-menu">
-        <div class="container-menu">
-            <div class="cont-menu">
-                <nav>
-                    <a href="AdminGestorNoticias.php">Noticias</a>
-                    <a href="AdminGestorPublicaciones.php">Publicaciones</a>
-                    <a href="AdminGestorProyectos.php">Proyectos</a>
-                    <a href="AdminGestorBT.php">Bolsa de trabajo</a>
-                    <a href="AdminGestorAcademicos.php">Academicos</a>
-                    <a href="AdminGestorFuncionarios.php">Funcionarios</a>
-                </nav>
-                <label for="btn-menu">✖️</label>
-            </div>
-        </div>
+        <?php include_once fromroot($file, "include/dashboard/navbar.php", TRUE); ?>
         <div class="fondo">
             <img src="../img/dpto/dpto.jpg" alt="">
         </div>
@@ -66,8 +28,119 @@ include_once "../config/config.php";
             <section class="seccion">
                 <div class="container-Noticias">
                     <div class="container-boton">
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addcourse-modal">Añadir Academico</button>
+                        <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal">
+                            Añadir academico
+                        </button>
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 style="text-align:center;" class="modal-title" id="exampleModalLabel">Nuevo Academico</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                
+                                 <div class="modal-body">
+                                    <div class="form-field  " style="text-align:center; margin-top: 5px;">
+                                        <input style="width: 200px; text-align:center;" id="nombre" name="nombre" class="input-text js-input" placeholder="Nombre" type="text" required>
+                     
+                                    </div>
+                                    <div class="form-field  " style="text-align:center; margin-top: 5px;">
+                                        <input style="width: 200px; text-align:center;" id="correo" name="correo" class="input-text js-input" placeholder="Correo" type="text" required>
+                                    </div>
+                                    <div class="form-field  " style="text-align:center; margin-top: 5px;">
+                                        <input style="width: 200px; text-align:center;" id="fono" name="fono" class="input-text js-input" placeholder="Fono" type="text" required>
+                                    </div>
+                                    <div class="form-field  " style="text-align:center; margin-top: 5px;">
+                                        <input style="width: 200px; text-align:center;" id="descripcion" name="descripcion" class="input-text js-input" placeholder="Descripcion" type="text" required>
+                                    </div>
+                                    <div class="form-field  " style="text-align:center; margin-top: 5px;">
+                                        <input style="width: 200px; text-align:center;" id="grado_academico" name="grado_academico" class="input-text js-input" placeholder="Grado Academico" type="text" required>
+                                    </div>
+                                    <div class="form-field  " style="text-align:center; margin-top: 5px;">
+                                        <input style="width: 200px; text-align:center;" id="area_interes" name="area_interes" class="input-text js-input" placeholder="Area de interes" type="text" required>
+                                    </div>
+                                    <div class="form-field  " style="text-align:center; margin-top: 5px;">
+                                        <input style="width: 200px; text-align:center;" id="es_academico" name="es_academico" class="input-text js-input" placeholder="es_academico" type="text" required>
+                                    </div>
+                                     <div style="margin-left: 110px;" class="form-field "><br>
+                                         <input   name="imagen" type="file" required>
+                                    </div>
+                                    
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn " data-dismiss="modal">Cerrar</button>
+                                    <button type="button" class="btn">Ingresar</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                </div>
+                <table class="table">
+                        <thead   >
+                            <tr style="height: 40px; ">
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Correo</th>
+                                <th scope="col">Fono</th>
+                                <th scope="col">Cargo</th>
+                                <th scope="col">Descripcion</th>
+                                <th scope="col">Grado Academico</th>
+                                <th scope="col">Area de Interes</th>
+                                <th scope="col">Imagen</th>
+                                <th scope="col">Acción</th>
+
+                                
+                            </tr>
+                        </thead>
+                        <tbody class="tbody">
+                            <?php
+                            $sql = "select * from funcionarios where es_academico = 1"; // mejorar query falta nombre del que subio la noticia
+                            $resultado = mysqli_query($conexion, $sql);
+                            while ($mostrar = mysqli_fetch_array($resultado)) {
+                            ?>
+                                <tr >
+                                    <td>
+                                        <p class="card-text" style="text-align: center;"><small class="text-muted"><?php echo $mostrar['Nombre']; ?></small></p>
+                                    </td>
+                                    <td>
+                                        <p class="card-text" style="text-align: center;"><small class="text-muted"><?php echo $mostrar['correo']; ?></small></p>
+                                    </td>
+                                    <td>
+                                        <p class="card-text" style="text-align: center; width: 50px;"><small class="text-muted"><?php echo $mostrar['fono']; ?></small></p>
+                                    </td>
+                                    <td>
+                                        <p class="card-text" style="text-align: center;"><small class="text-muted"><?php echo $mostrar['cargo']; ?></small></p>
+                                    </td>
+                                     <td >
+                                        <p class="card-text" style="text-align: center;"><small class="text-muted"><?php echo $mostrar['descripcion']; ?></small></p>
+                                    </td>
+                                     <td>
+                                        <p class="card-text" style="text-align: center;"><small class="text-muted"><?php echo $mostrar['grado_academico']; ?></small></p>
+                                    </td>
+                                     <td>
+                                        <p class="card-text" style="text-align: center;"><small class="text-muted"><?php echo $mostrar['area_interes']; ?></small></p>
+                                    </td>
+                                    
+
+                                    <td style="text-align: center; "><img style="width: 150px; height: 150px; padding-left:25px;" src="data:image/jpg;base64,<?php echo base64_encode($mostrar["imagen"]); ?>"></td>
+                                    
+                                    
+                                   
+                                    <td>
+                                        <div class="btn-group btn-group-sm" style="text-align: center;" role="group">
+                                            <a class="btn btn-secondary"style="color:seagreen;" href="#"><i class="bi bi-pencil"></i></a>
+                                            <a class="btn btn-danger" href="#"><i class="bi bi-x-circle"></i></a>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            <?php } ?>
+                            
+                        </tbody>
+                    </table>
+                    
+                </div>
                     
                 </div>
             </section>
@@ -75,15 +148,6 @@ include_once "../config/config.php";
     </div>
 </body>
 
-<script src=<?php echo fromroot($file, "js/vendor/jquery-1.12.0.min.js"); ?>></script>
-<script src=<?php echo fromroot($file, "js/bootstrap.min.js"); ?>></script>
-<script src=<?php echo fromroot($file, "js/jquery.meanmenu.js"); ?>></script>
-<script src=<?php echo fromroot($file, "js/jquery.magnific-popup.js"); ?>></script>
-<script src=<?php echo fromroot($file, "js/ajax-mail.js"); ?>></script>
-<script src=<?php echo fromroot($file, "js/owl.carousel.min.js"); ?>></script>
-<script src=<?php echo fromroot($file, "js/jquery.mb.YTPlayer.js"); ?>></script>
-<script src=<?php echo fromroot($file, "js/jquery.nicescroll.min.js"); ?>></script>
-<script src=<?php echo fromroot($file, "js/plugins.js"); ?>></script>
-<script src=<?php echo fromroot($file, "js/main.js"); ?>></script>
+<?php include_once fromroot($file, "include/dashboard/footer.php", TRUE); ?>
 
 </html>

@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="es">
 <?php
     session_start();
     $file = __FILE__;
@@ -9,7 +9,7 @@
     include_once "include/head.php";
 ?>
 
-<body>
+
 
     <body>
         <!-- Header -->
@@ -33,73 +33,80 @@
         </div>
         Banner Area End -->
         <!-- Teacher Start -->
+        <?php 
+            $sql = sprintf("select * from funcionarios where id=%s",$_GET['id']);
+            $resultado = mysqli_query($conexion, $sql);
+            $mostrar = mysqli_fetch_array($resultado); 
+        ?>
         <div class="teacher-details-area pt-150 pb-60">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-5 col-sm-5 col-xs-12">
-                        <div class="teacher-details-img">
-                            <img src="img/academicos/img1.jpg" alt="teacher">
+                <div class="col">
+                    <div class="row-flex">
+
+                        <div class="col teacher-details-img">
+                            <img alt="teacher" style="width: 100%;" src="data:image/jpg;base64,<?php echo base64_encode($mostrar["imagen"]); ?>">>
                         </div>
-                        <style type="text/css">
-                            table,
-                            th,
-                            td {
-                                border: 1px solid black;
-                            }
-                        </style>
+
+                        <div class="col teacher-details-content">
+                            <style type="text/css">
+                                table,
+                                th,
+                                td {
+                                    border: 1px solid black;
+                                }
+                            </style>
+                            <h2><?php echo $mostrar['Nombre']; ?></h2>
+                            <h5>Profesor</h5>
+                            <h4></h4>
+                            <p><?php echo $mostrar['descripcion']; ?></p>
+                            <ul>
+                                <li><span>Grado Academico: </span><?php echo $mostrar['grado_academico']; ?>
+                                </li>
+                                <li><span>Areas de interes: </span><?php echo $mostrar['area_interes']; ?>
+                                </li>
+                            </ul>
+
+                            <div class="col">
+                                <div class="teacher-contact">
+                                    <h4>Informacion de contacto:</h4>
+                                    <p><span>Correo: </span><?php echo $mostrar['correo']; ?></p>
+                                    <p><span>FONO: </span><?php echo $mostrar['fono']; ?></p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row-md-5 row-sm-5 row-xs-12">
+
                         <h3>Artículos</h3>
-                        <table style="width: 100%">
-                            <tr align="center">
-                                <td>Título</td>
-                                <td>Autores</td>
-                                <td>Fecha de Publicación</td>
-                                <td>Número de Páginas</td>
-                                <td>Ver artículo</td>
-                            </tr>
+                        <table class="table" style="width: 100%">
+                            <thead class="table-dark">
+                                <tr align="center">
+                                    <th>Título</th>
+                                    <th>Autores</th>
+                                    <th>Fecha de Publicación</th>
+                                    <th>Ver artículo</th>
+                                </tr>
+                            </thead>
                             <?php
-                            $query = "SELECT `titulo`, `Autores`, `Fecha`, `Acceso` FROM `publicaciones`";
-                            $res = $conexion->query($query);
+                            $query = "SELECT `titulo`, `autor`, `fecha`, `acceso` FROM `publicaciones` WHERE id_academico=%s";
+                            $res = $conexion->query(sprintf($query,$_GET['id']));
                             while ($row = $res->fetch_assoc()) {
                             ?>
                                 <tr align="center">
-                                    <td><?php echo $row['TituloPublicacion']; ?></td>
-                                    <td><?php echo $row['Autores']; ?></td>
-                                    <td><?php echo $row['Fecha']; ?></td>
-                                    <td><?php echo $row['paginas']; ?></td>
-                                    <td><a href="<?php echo $row['Acceso']; ?>">Ver Artículo</a></td>
+                                    <td><?php echo $row['titulo']; ?></td>
+                                    <td><?php echo $row['autor']; ?></td>
+                                    <td><?php echo $row['fecha']; ?></td>
+                                    <td><a href="<?php echo $row['acceso']; ?>">Ver Artículo</a></td>
                                 </tr>
-                                <?php
+                            <?php
                             } ?>
                         </table>
-                    </div>
-                    <div class="col-md-7 col-sm-7 col-xs-12">
-                        <div class="teacher-details-content ml-50">
-                            <h2>Servando Campillay</h2>
-                            <h5>Profesor</h5>
-                            <h4></h4>
-                            <p> </p>
-                            <ul>
-                                <li><span>Grado Academico: </span>Magister en Ingeniería de Software, Universidad de Tarapacá,Licenciado en Ciencias de la Ingeniería, Universidad de Tarapacá.
-                                </li>
-                                <li><span>Areas de interes: </span>Lenguajes de programación,Base de datos,Inteligencia de negocios,Inteligencia artificial.
-                                </li>
-
-
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3 col-sm-4">
-                        <div class="teacher-contact">
-                            <h4>Informacion de contacto:</h4>
-                            <p><span>Correo: </span>servando.campillay@uda.cl</p>
-                            <p><span>FONO: </span>(52) 2 255683</p>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
         <!-- FOOTER -->
         <?php include_once "include/footer.php"; ?>
         <!-- FOOTER -->

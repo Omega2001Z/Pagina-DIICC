@@ -13,6 +13,8 @@
                 <div class="col-md-4 col-sm-4 col-xs-4">
                     <div class="header-top-right text-right">
                         <ul>
+                        <li><a href="#" target="_blank">Sugerencias</a></li>
+                            <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdoJ4pKZWImnq67HAen8p9rUejfvMxjNRzKr3Btfl0Bb8QriA/viewform?embedded=true" target="_blank">Admisión</a></li>
                             <li><a href=<?php echo fromroot($file, "login.php"); ?>>Iniciar sesión</a></li>
                         </ul>
                     </div>

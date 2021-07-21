@@ -7,6 +7,10 @@
     include_once "config/config.php";
     include_once "include/functions.php";
     include_once "include/head.php";
+
+    if (isset($_SESSION['usuario'])){
+        header(sprintf('Location:%s', fromroot($file, "dashboard/index.php", True)));
+    }
 ?>
     <body>
         <!-- HEADER -->
@@ -46,7 +50,7 @@
                                 }
                                 ?>
                                 <div class="login-form">
-                                    <form action="database/Conexion.php" method="POST" autocomplete="off">
+                                    <form action="database/login.php" method="POST" autocomplete="off">
                                         <input type="email" name="correo" placeholder="Correo institucional">
                                         <input type="password" name="password" placeholder="Contraseña">
                                         <div class="button-box">

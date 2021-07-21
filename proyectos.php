@@ -33,89 +33,36 @@
         <div class="blog-area pt-150 pb-150">
             <div class="container">
                 <div class="row">
-                    
                     <div class="col-md-8">
                         <div class="container proyectos">
                         <div class="row">
+                                  <?php
+                        $sql = "SELECT * FROM `proyectos` ORDER BY id ASC"; // mejorar query falta nombre del que subio la noticia
+                        $resultado = mysqli_query($conexion, $sql);
+                        while ($mostrar = mysqli_fetch_array($resultado)){ ?>
+
                             <div class="col-md-6 col-sm-6 col-xs-12">
                                 <div class="single-blog mb-60">
                                     <div class="blog-img">
-                                        <a href="https://ibima.org/accepted-paper/faset-desarrollo-de-un-asistente-web-para-el-proceso-de-seleccion-de-tecnicas-de-educcion-de-requisitos/"><img src="img/blog/blog-1.jpg" alt="blog"></a>
+                                        <?php echo '<a href="' . $mostrar["link"] . '"></a>'; ?><img src="data:image/jpg;base64,<?php echo base64_encode($mostrar["imagen"]); ?>">
                                         <div class="blog-hover">
                                             <i class="fa fa-link"></i>
                                         </div>
                                     </div>
                                     <div class="blog-content">
                                         <div class="blog-top">
-                                            <p>Dante Carrizo  /  2018  / Conference Proceeding / Scopus</p>
+                                             <p><?php echo $mostrar['year'];?></p>
                                         </div>
                                         <div class="blog-bottom">
-                                            <h2><a href="https://ibima.org/accepted-paper/faset-desarrollo-de-un-asistente-web-para-el-proceso-de-seleccion-de-tecnicas-de-educcion-de-requisitos/">FASET: Desarrollo de un Asistente Web. </a></h2>
-                                            <a href="https://ibima.org/accepted-paper/faset-desarrollo-de-un-asistente-web-para-el-proceso-de-seleccion-de-tecnicas-de-educcion-de-requisitos/">Seguir leyendo</a>
+                                            <h2><?php echo '<a href="' . $mostrar["link"] . '">' . $mostrar['nombre'] . '</a>'; ?></h2>
+                                <?php echo '<a href="' . $mostrar["link"] . '">Seguir Leyendo</a>'; ?>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                <div class="single-blog mb-60">
-                                    <div class="blog-img">
-                                        <a href="http://fei-web.lv/en/itcity"><img src="img/blog/blog-2.jpg" alt="blog"></a>
-                                        <div class="blog-hover">
-                                            <i class="fa fa-link"></i>
-                                        </div>
-                                    </div>
-                                    <div class="blog-content">
-                                        <div class="blog-top">
-                                            <p>Dante Carrizo / 2019    </p>
-                                        </div>
-                                        <div class="blog-bottom">
-                                            <h2><a href="http://fei-web.lv/en/itcity">ITCity </a></h2>
-                                            <a href="http://fei-web.lv/en/itcity">Seguir leyendo</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <?php }?>
                         </div>
-                        <div class="row">
-                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                <div class="single-blog mb-60">
-                                    <div class="blog-img">
-                                        <a href="proyectoevaluacion.html"><img src="img/blog/blog-3.jpg" alt="blog"></a>
-                                        <div class="blog-hover">
-                                            <i class="fa fa-link"></i>
-                                        </div>
-                                    </div>
-                                    <div class="blog-content">
-                                        <div class="blog-top">
-                                            <p>John Wilmar Castro /  2018  /  Conference Proceedings Citation Index  / Scopus </p>
-                                        </div>
-                                        <div class="blog-bottom">
-                                            <h2><a href="proyectoevaluacion.html">Evaluación de la Usabilidad de Aplicaciones Móviles </a></h2>
-                                            <a href="proyectoevaluacion.html">Seguir leyendo</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                <div class="single-blog mb-60">
-                                    <div class="blog-img">
-                                        <a href="http://medfasee.ufsc.br/conosur/"><img src="img/blog/blog-4.jpg" alt="blog"></a>
-                                        <div class="blog-hover">
-                                            <i class="fa fa-link"></i>
-                                        </div>
-                                    </div>
-                                    <div class="blog-content">
-                                        <div class="blog-top">
-                                            <p>DIICC UDA / 2016  </p>
-                                        </div>
-                                        <div class="blog-bottom">
-                                            <h2><a href="http://medfasee.ufsc.br/conosur/">Proyecto MedFasee </a></h2>
-                                            <a href="http://medfasee.ufsc.br/conosur/">Seguir leyendo</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
             <div class="col-md-4">
@@ -141,45 +88,25 @@
                             <!-- Ultimos Posts -->
                             <div class="single-blog-widget mb-50">
                                 <h3>Ultimos Proyectos publicados</h3>
-                                <div class="single-post mb-30">
+                        <?php
+                        $sql = "SELECT * FROM `proyectos` ORDER BY id ASC"; // mejorar query falta nombre del que subio la noticia
+                        $resultado = mysqli_query($conexion, $sql);
+                        while ($mostrar = mysqli_fetch_array($resultado)){ ?>
+
+                                <div class="single-post mb-30" style="width: 200px; height: 200px;">
                                     <div class="single-post-img">
-                                        <a href="http://www.diicc.uda.cl/magister/investigacion/faset/index.html"><img src="img/post/post-1.jpg" alt="post">
+                                         <?php echo '<a href="' . $mostrar["link"] . '"></a>';?><img src="data:image/jpg;base64,<?php echo base64_encode($mostrar["imagen"]); ?>">
                                             <div class="blog-hover">
                                                 <i class="fa fa-link"></i>
                                             </div>
                                         </a>
                                     </div>
                                     <div class="single-post-content">
-                                        <h4><a href="http://www.diicc.uda.cl/magister/investigacion/faset/index.html">FASET</a></h4>
-                                        <p>Dante Carrizo / 2018 </p>
+                                         <h4><?php echo '<a href="' . $mostrar["link"] . '">' . $mostrar['nombre'] . '</a>'; ?></h4> 
+                                         <p><?php echo $mostrar['year'];?></p>
                                     </div>
                                 </div>
-                                <div class="single-post mb-30">
-                                    <div class="single-post-img">
-                                        <a href="http://fei-web.lv/en/itcity"><img src="img/post/post-2.jpg" alt="post">
-                                            <div class="blog-hover">
-                                                <i class="fa fa-link"></i>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="single-post-content">
-                                        <h4><a href="http://fei-web.lv/en/itcity">ITCity</a></h4>
-                                        <p>Dante Carrizo / 2019</p>
-                                    </div>
-                                </div>
-                                <div class="single-post">
-                                    <div class="single-post-img">
-                                        <a href="proyectoevaluacion.html"><img src="img/post/post-3.jpg" alt="post">
-                                            <div class="blog-hover">
-                                                <i class="fa fa-link"></i>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="single-post-content">
-                                        <h4><a href="proyectoevaluacion.html">Evaluación de la Usabilidad de Aplicaciones Móviles</a></h4>
-                                        <p>John W. Castro Ll. /  2017</p>
-                                    </div>
-                                </div>
+                            <?php } ?>
                             </div>
                         </div>
                     </div>

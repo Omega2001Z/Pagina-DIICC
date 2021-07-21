@@ -7,6 +7,13 @@
     include_once "config/config.php";
     include_once "include/functions.php";
     include_once "include/head.php";
+
+    if (!isset($_GET['page'])){
+        $page = 0;
+    }
+    else{
+        $page = $_GET['page'];
+    }
 ?>
 
 <body>
@@ -38,7 +45,7 @@
             <div class="row">
 
                 <?php
-                $sql = "select * from noticias"; // mejorar query falta nombre del que subio la noticia
+                $sql = sprintf("SELECT * FROM noticias LIMIT 10 OFFSET %d",$page*10); 
                 $resultado = mysqli_query($conexion, $sql);
                 while ($mostrar = mysqli_fetch_array($resultado)) {
                 ?>
@@ -71,9 +78,17 @@
                 <div class="col-xs-12">
                     <div class="pagination">
                         <ul>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
+                            <?php 
+                            #$total = mysqli_query($conexion, 'SELECT count(*) from noticias;');
+                            if ($page == 0){
+                                ++$page;
+                            }
+                                $page = $page + 1;
+                                echo '<li><a href="noticias.php">1</a></li>';
+                            if ($resultado->num_rows != 0){
+                                echo sprintf('<li><a href="noticias.php?page=%d">%d</a></li>', $page, $page);
+                            }
+                            ?>
                         </ul>
                     </div>
                 </div>

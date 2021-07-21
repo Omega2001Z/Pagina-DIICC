@@ -12,3 +12,4 @@ Quienes Trabajaron
   - Felipe Chepilla R
   - Javiera Carvajal R
   - Ignacio Almonte G
+  - Valeria Castro Ubal

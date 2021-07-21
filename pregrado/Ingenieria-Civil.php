@@ -69,8 +69,7 @@ echo '<script src="../js/malla.js"></script>';
                             </div> -->
                         <div class="single-blog-widget mb-47">
                             <div class="single-blog-banner">
-                                <a href="#" id="blog"><img src=<?php echo fromroot($file, "img/blog/blog-img.jpg"); ?> alt="blog"></a>
-                                <h2><br>charla magistral<br> </h2>
+                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdoJ4pKZWImnq67HAen8p9rUejfvMxjNRzKr3Btfl0Bb8QriA/viewform?embedded=true" id="blog"><img src=<?php echo fromroot($file, "img/blog/blog-img.jpg"); ?> alt="blog"></a>
                             </div>
                         </div>
 

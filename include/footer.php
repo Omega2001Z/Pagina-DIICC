@@ -14,7 +14,7 @@
                         <h3>información</h3>
                         <ul>
                             <li><a href=<?php echo fromroot($file, "academicos.php"); ?>>Profesores</a></li>
-                            <li><a href=<?php echo fromroot($file, "Noticias.php"); ?>>Noticias</a></li>
+                            <li><a href=<?php echo fromroot($file, "noticias.php"); ?>>Noticias</a></li>
                             <li><a href=<?php echo fromroot($file, "index.php#eventos"); ?>>Eventos</a></li>
                             <li><a href=<?php echo fromroot($file, "publicaciones.php"); ?>>Publicaciones</a></li>
                         </ul>

@@ -34,126 +34,26 @@
         <div class="teacher-area pt-150 pb-105">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-3 col-sm-4 col-xs-12">
+                <?php
+                    $sql = "select * from funcionarios ORDER BY id DESC"; // mejorar query falta nombre del que subio la noticia
+                    $resultado = mysqli_query($conexion, $sql);
+                    while ($mostrar = mysqli_fetch_array($resultado)) {
+                ?>
+
+                |   <div class="col-md-3 col-sm-4 col-xs-12">
                         <div class="single-teacher mb-45">
                             <div class="single-teacher-img">
-                                <a href="academico.php"><img src="img/academicos/img1.jpg" alt="teacher"></a>
+                                <a href="academico.php?id=<?php echo $mostrar['id']; ?>"><img alt="teacher" src="data:image/jpg;base64,<?php echo base64_encode($mostrar["imagen"]); ?>"></a>
                             </div>
                             <div class="single-teacher-content text-center">
-                                <h2><a href="DetallesServando.php">Servando Campillay</a></h2>
+                                <h2><a href="academico.php?id=<?php echo $mostrar['id']; ?>"><?php echo $mostrar['Nombre']; ?></a></h2>
                                 <h4>Profesor</h4>
 
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-4 col-xs-12">
-                        <div class="single-teacher mb-45">
-                            <div class="single-teacher-img">
-                                <a href="academico.php"><img src="img/academicos/img2.jpg" alt="teacher"></a>
-                            </div>
-                            <div class="single-teacher-content text-center">
-                                <h2><a href="academico.php">Nahur Melendez</a></h2>
-                                <h4>Profesor</h4>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-4 col-xs-12">
-                        <div class="single-teacher mb-45">
-                            <div class="single-teacher-img">
-                                <a href="academico.php"><img src="img/academicos/img3.jpg" alt="teacher"></a>
-                            </div>
-                            <div class="single-teacher-content text-center">
-                                <h2><a href="academico.php">Vladimmir Riffo</a></h2>
-                                <h4>Profesor</h4>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-4 col-xs-12">
-                        <div class="single-teacher mb-45">
-                            <div class="single-teacher-img">
-                                <a href="academico.php"><img src="img/academicos/img4.jpg" alt="teacher"></a>
-                            </div>
-                            <div class="single-teacher-content text-center">
-                                <h2><a href="academico.php">John Castro</a></h2>
-                                <h4>Profesor</h4>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-4 col-xs-12">
-                        <div class="single-teacher mb-45">
-                            <div class="single-teacher-img">
-                                <a href="academico.php"><img src="img/academicos/img5.jpg" alt="teacher"></a>
-                            </div>
-                            <div class="single-teacher-content text-center">
-                                <h2><a href="academico.php">Wilson Castillo</a></h2>
-                                <h4>Director del Departamento</h4>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-4 col-xs-12">
-                        <div class="single-teacher mb-45">
-                            <div class="single-teacher-img">
-                                <a href="academico.php"><img src="img/academicos/img6.jpg" alt="teacher"></a>
-                            </div>
-                            <div class="single-teacher-content text-center">
-                                <h2><a href="academico.php">Manuel Monasterio</a></h2>
-                                <h4>Profesor</h4>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-4 col-xs-12">
-                        <div class="single-teacher mb-45">
-                            <div class="single-teacher-img">
-                                <a href="academico.php"><img src="img/academicos/img7.jpg" alt="teacher"></a>
-                            </div>
-                            <div class="single-teacher-content text-center">
-                                <h2><a href="academico.php">Andres Alfaro</a></h2>
-                                <h4>Profesor</h4>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-4 col-xs-12">
-                        <div class="single-teacher mb-45">
-                            <div class="single-teacher-img">
-                                <a href="academico.php"><img src="img/academicos/img10.jpg" alt="teacher"></a>
-                            </div>
-                            <div class="single-teacher-content text-center">
-                                <h2><a href="academico.php">Hector Cornide Reyes</a></h2>
-                                <h4>Profesor Asistente</h4>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-4 col-xs-12">
-                        <div class="single-teacher mb-45">
-                            <div class="single-teacher-img">
-                                <a href="academico.php"><img src="img/academicos/img8.jpg" alt="teacher"></a>
-                            </div>
-                            <div class="single-teacher-content text-center">
-                                <h2><a href="academico.php">Jaqueline Manriquez</a></h2>
-                                <h4>Profesor</h4>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-4 col-xs-12">
-                        <div class="single-teacher mb-45">
-                            <div class="single-teacher-img">
-                                <a href="academico.php"><img src="img/academicos/img9.jpg" alt="teacher"></a>
-                            </div>
-                            <div class="single-teacher-content text-center">
-                                <h2><a href="academico.php">Dante Carrizo Moreno</a></h2>
-                                <h4>Profesor</h4>
-
-                            </div>
-                        </div>
-                    </div>
+                
+                <?php } ?>
                 </div>
             </div>
         </div>

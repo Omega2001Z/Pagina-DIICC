@@ -14,18 +14,18 @@
 	}
 
 	// Creación de la base de datos "paginaDIICC"
-	$sql = "create database paginaDIICC;";
+	$sql = "create database {$database};";
 	if ($conexion->query($sql) === true) {
-		echo "Base de datos 'paginaDIICC' creada correctamente.<br>";
+		echo "Base de datos '{$database}' creada correctamente.<br>";
 	} else {
-		die("No pudo crearse la base de datos 'paginaDIICC': ".$conexion->error);
+		die("No pudo crearse la base de datos '{$database}': ".$conexion->error);
 	}
 
 	// Selección de la base de datos "paginaDIICC"
 	if (mysqli_select_db($conexion, $database) === true) {
-		echo "Base de datos 'paginaDIICC' seleccionada correctamente.<br><br>";
+		echo "Base de datos '{$database}' seleccionada correctamente.<br><br>";
 	} else {
-		die("No pudo seleccionarse la base de datos 'paginaDIICC': ".$conexion->error);
+		die("No pudo seleccionarse la base de datos '{$database}': ".$conexion->error);
 	}
 
 	// Creación de la tabla de Usuarios

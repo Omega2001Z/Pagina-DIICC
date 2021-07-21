@@ -34,7 +34,7 @@
         animateOut: 'fadeOut',
         animateIn: 'fadeIn',
         smartSpeed: 2500,
-        navText:['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
+        navText:['<i class="bi bi-arrow-left"></i>','<i class="bi bi-arrow-right"></i>'],
         responsive:{
             0:{
                 items:1
@@ -51,7 +51,7 @@
     $('.partner-owl').owlCarousel({
         loop:true,
         nav:true,
-        navText:['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
+        navText:['<i class="bi bi-arrow-left"></i>','<i class="bi bi-arrow-right"></i>'],
         responsive:{
             0:{
                 items:1
@@ -68,7 +68,7 @@
     $('.testimonial-owl').owlCarousel({
         loop:true,
         nav:true,
-        navText:['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
+        navText:['<i class="bi bi-arrow-left"></i>','<i class="bi bi-arrow-right"></i>'],
         responsive:{
             0:{
                 items:1
@@ -108,7 +108,7 @@
 	Scrollup
 --------------------------------------*/
     $.scrollUp({
-        scrollText: '<i class="fa fa-angle-up"></i>',
+        scrollText: '<i class="bi bi-arrow-up"></i>',
         easingType: 'linear',
         scrollSpeed: 900,
         animation: 'fade'

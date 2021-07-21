@@ -35,7 +35,7 @@
             <div class="container">
                 <div class="row">
                 <?php
-                    $sql = "select * from funcionarios ORDER BY id DESC"; // mejorar query falta nombre del que subio la noticia
+                    $sql = "select * from funcionarios WHERE es_academico = 1 ORDER BY id DESC"; // mejorar query falta nombre del que subio la noticia
                     $resultado = mysqli_query($conexion, $sql);
                     while ($mostrar = mysqli_fetch_array($resultado)) {
                 ?>
@@ -43,7 +43,7 @@
                 |   <div class="col-md-3 col-sm-4 col-xs-12">
                         <div class="single-teacher mb-45">
                             <div class="single-teacher-img">
-                                <a href="academico.php?id=<?php echo $mostrar['id']; ?>"><img alt="teacher" src="data:image/jpg;base64,<?php echo base64_encode($mostrar["imagen"]); ?>"></a>
+                                <a href="academico.php?id=<?php echo $mostrar['id']; ?>"><img alt="teacher" src=<?php echo fromroot($file, $mostrar['img_path']);?>></a>
                             </div>
                             <div class="single-teacher-content text-center">
                                 <h2><a href="academico.php?id=<?php echo $mostrar['id']; ?>"><?php echo $mostrar['Nombre']; ?></a></h2>

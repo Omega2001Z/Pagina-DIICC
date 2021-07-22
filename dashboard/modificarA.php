@@ -3,17 +3,22 @@
 <?php
 session_start();
 $file = __FILE__;
+$pagetitle = "ACADEMICOS - DIICC UDA";
 include_once "../include/functions.php";
 include_once "../config/config.php";
-include_once "../include/dashboard/head.php";
+
+if (!isset($_SESSION['usuario'])){
+    header(sprintf('Location:%s', fromroot($file, "index.php", True)));
+}
+include_once fromroot($file, "include/dashboard/head.php", TRUE);
 ?>
 
 <body>
     <div class="container-contenido">
-        <?php include_once "../include/dashboard/header.php"; ?>
+        <?php include_once fromroot($file, "include/dashboard/header.php", TRUE); ?>
         <div class="capa"></div>
         <!--    --------------->
-        <?php include_once "../include/dashboard/navbar.php"; ?>
+        <?php include_once fromroot($file, "include/dashboard/navbar.php", TRUE); ?>
         <div class="fondo">
             <img src="../img/dpto/dpto.jpg" alt="">
         </div>
@@ -22,15 +27,15 @@ include_once "../include/dashboard/head.php";
                 <div class="container-Noticias">
                     <div class="container-formulario">
                         <?php
-                        $sql = sprintf("select * from funcionarios where es_academico=1 , id=%s", $_GET['id']);
+                        $sql = sprintf("select * from funcionarios where es_academico=1 and id=%s", $_GET['id']);
                         $resultado = mysqli_query($conexion, $sql);
                         $mostrar = mysqli_fetch_array($resultado);
                         ?>
-                        <form class="form" action="../database/funcionarios/modificar.php" method="post" enctype="multipart/form-data">
+                        <form class="form" action="../database/academicos/modificar.php" method="post" enctype="multipart/form-data">
                             <input type="hidden" name='id' <?php echo sprintf('value="%s"', $_GET['id']); ?>>
                             <div class="input-group">
                                 <span class="input-group-addon" id="basic-addon1">@</span>
-                                <input type="text" name='nombre' class="form-control" placeholder="Nombre" aria-describedby="basic-addon1" <?php echo sprintf('value="%s"',  $mostrar['nombre']); ?>>
+                                <input type="text" name='nombre' class="form-control" placeholder="Nombre" aria-describedby="basic-addon1" <?php echo sprintf('value="%s"',  $mostrar['Nombre']); ?>>
                             </div>
                              <div class="input-group">
                                 <span class="input-group-addon" id="basic-addon2"><i class="bi bi-paint-bucket"></i></span>
@@ -46,7 +51,7 @@ include_once "../include/dashboard/head.php";
                             </div>
                              <div class="input-group">
                                 <span class="input-group-addon" id="basic-addon4"><i class="bi bi-paint-bucket"></i></span>
-                                <textarea class="form-control" name="descripcion" placeholder="Descripcion" style="height: 250px;"><?php echo   $mostrar['descripcion']; ?></textarea>
+                                <textarea class="form-control" name="descripcion" placeholder="Descripcion" style="height: 250px;"><?php echo $mostrar['descripcion']; ?></textarea>
                             </div>
                              <div class="input-group">
                                 <span class="input-group-addon" id="basic-addon5"><i class="bi bi-paint-bucket"></i></span>
@@ -54,7 +59,7 @@ include_once "../include/dashboard/head.php";
                             </div>
                             <div class="input-group">
                                 <span class="input-group-addon" id="basic-addon6"><i class="bi bi-paint-bucket"></i></span>
-                                <input  class="form-control" name="area_interes" placeholder="Grado Academico" <?php echo sprintf('value="%s"',$mostrar['area_interes']); ?>>
+                                <input  class="form-control" name="area_interes" placeholder="Área ínteres" <?php echo sprintf('value="%s"',$mostrar['area_interes']); ?>>
                             </div>
 
                             <div class="input-group">

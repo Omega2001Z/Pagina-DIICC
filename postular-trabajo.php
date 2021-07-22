@@ -45,7 +45,7 @@ $result = $result->fetch_assoc();
                 <div class="col-md-8">
                     <div class="blog-details">
                         <div class="blog-details-img">
-                            <img <?php echo sprintf('src="data:image/jpg;base64,%s"', base64_encode($result["imagen"])); ?> alt="blog-details">
+                            <img <?php echo sprintf('src="%s"', $result["img_path"]); ?> alt="blog-details">
                         </div>
                         <div class="blog-details-content">
                             <h2><?php echo $result['cargo']; ?></h2>
@@ -99,7 +99,7 @@ $result = $result->fetch_assoc();
 
                                 <div class="single-post mb-30">
                                     <div class="single-post-img">
-                                        <a href="postular-trabajo.php?id=<?php echo $r['id']; ?>"><img src="data:image/jpg;base64,<?php echo base64_encode($r["imagen"]); ?>" alt="post">
+                                        <a href="postular-trabajo.php?id=<?php echo $r['id']; ?>"><img src=<?php echo fromroot($file, $r["img_path"]); ?> alt="post">
                                             <div class="blog-hover">
                                                 <i class="fa fa-link"></i>
                                             </div>

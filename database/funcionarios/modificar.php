@@ -4,8 +4,11 @@ $file = __FILE__;
 include_once "../../include/functions.php";
 include_once "../../config/config.php";
 
-
 $id = $_POST['id'];
+$sql = "SELECT * from funcionarios where id = {$id}";
+$result = $conexion->query($sql);
+$result = $result->fetch_assoc();
+$image = $result["img_path"];
 
 if (!empty($_FILES['img'])){
 	$errors = array();
@@ -14,7 +17,7 @@ if (!empty($_FILES['img'])){
 	$file_tmp = $_FILES['img']['tmp_name'];
 	$file_type = $_FILES['img']['type'];
 	$file_ext = strtolower(end(explode('.', $_FILES['img']['name'])));
-	$file_path = wp_normalize_path($_SESSION['root']."/img/upload/trabajos/").$file_name;
+	$file_path = wp_normalize_path($_SESSION['root']."/img/upload/funcionarios/").$file_name;
 
 	$extensions = array("jpeg", "jpg", "png");
 
@@ -24,8 +27,8 @@ if (!empty($_FILES['img'])){
 
 	if (empty($errors) == true) {
 		copy($file_tmp, $file_path);
-		$image = "img/upload/trabajos/" . $file_name;
-		$sql = "UPDATE `trabajos` SET `img_path` = '{$image}' WHERE `trabajos`.`id` = {$id};";
+		$image = "img/upload/funcionarios/" . $file_name;
+		$sql = "UPDATE `funcionarios` SET `img_path` = '{$image}' WHERE `funcionarios`.`id` = {$id};";
 		$result = $conexion->query($sql);
 	} else {
 		$errors[] = "No se pudo subir la imagen";
@@ -33,9 +36,9 @@ if (!empty($_FILES['img'])){
 	
 }
 
-$sql = 'UPDATE trabajos SET cargo = \'%s\', empresa =  \'%s\',descripcion =\'%s\',ciudad =\'%s\' WHERE id = %s';
-$sql = sprintf($sql, $_POST['cargo'], $_POST['empresa'],$_POST['descripcion'],$_POST['ciudad'], $id);
+$sql = 'UPDATE funcionarios SET Nombre = \'%s\', cargo =  \'%s\', correo =  \'%s\', img_path = \'%s\' WHERE id = %s';
+$sql = sprintf($sql, $_POST['nombre'], $_POST['cargo'], $_POST['correo'], $image, $id);
 $result = $conexion->query($sql);
 
-header(sprintf('Location:%s', fromroot($file, "dashboard/AdminGestorBT.php", True)));
+header(sprintf('Location:%s', fromroot($file, "dashboard/AdminGestorFuncionarios.php", True)));
 ?>

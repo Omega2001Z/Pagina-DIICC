@@ -40,7 +40,7 @@
                     while ($mostrar = mysqli_fetch_array($resultado)) {
                 ?>
 
-                |   <div class="col-md-3 col-sm-4 col-xs-12">
+                   <div class="col-md-3 col-sm-4 col-xs-12">
                         <div class="single-teacher mb-45">
                             <div class="single-teacher-img">
                                 <a href="academico.php?id=<?php echo $mostrar['id']; ?>"><img alt="teacher" src=<?php echo fromroot($file, $mostrar['img_path']);?>></a>

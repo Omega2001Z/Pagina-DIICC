@@ -43,20 +43,23 @@
                                     <div class="modal-body">
                                     <form action="../database/trabajo/crear.php" method="POST" enctype="multipart/form-data">
                                         <div style="margin-left: 110px;" class="form-field "><br>
-                                            <input   name="imagen" type="file" required>
+                                            <input   name="img" type="file" required>
                                         </div>
                                         <div class="form-field  " style="text-align:center; margin-top: 5px;">
                                             <input style="width: 200px; text-align:center;" id="titulo" name="titulo" class="input-text js-input" placeholder="Titulo" type="text" required>
                                         </div>
                                         <div class="form-field  " style="text-align:center; margin-top: 5px;">
-                                            <input style="width: 200px; text-align:center;" id="fecha" name="fecha" class="input-text js-input" placeholder="Fecha" type="text" required>
+                                            <input style="width: 200px; text-align:center;" id="empresa" name="empresa" class="input-text js-input" placeholder="Empresa" type="text" required>
                                         </div>
                                         <div class="form-field  " style="text-align:center; margin-top: 5px;">
                                             <input style="width: 200px; text-align:center;" id="ciudad" name="ciudad" class="input-text js-input" placeholder="Ciudad" type="text" required>
                                         </div>
+                                        <div class="form-field  " style="text-align:center; margin-top: 5px;">
+                                            <textarea style="width: 200px; text-align:center;" id="descripcion" name="descripcion" placeholder="Descripcion" required></textarea>
+                                        </div>
                                     
                                     <div style="margin-top:30px; text-align: center;" class="container-ingresar">
-                                        <button type="button" class="btn">Ingresar</button>
+                                        <button type="submit" class="btn">Ingresar</button>
                                     </div>
                                 </form>
                                 </div>
@@ -98,8 +101,8 @@
                                     </td>
                                     <td>
                                         <div class="btn-group btn-group-sm" style="text-align: center;" role="group">
-                                            <a class="btn btn-secondary"style="color:seagreen;" href="../database/trabajo/modificar.php"><i class="bi bi-pencil"></i></a>
-                                            <a class="btn btn-danger" href="../database/trabajo/eliminar.php"><i class="bi bi-x-circle"></i></a>
+                                            <a class="btn btn-secondary"style="color:seagreen;" href="../dashboard/modificarT.php?id=<?php echo $mostrar['id']; ?>"><i class="bi bi-pencil"></i></a>
+                                            <a class="btn btn-danger" href="../database/trabajo/eliminar.php?id=<?php echo $mostrar['id']; ?>"><i class="bi bi-x-circle"></i></a>
                                         </div>
                                     </td>
                                 </tr>

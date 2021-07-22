@@ -42,9 +42,8 @@
                                     </div>
                                 <form action="../database/publicacion/crear.php" method="POST" enctype="multipart/form-data">
                                 <div class="modal-body">
-                                    <form action="../database/publicacion/crear.php" method="POST">
                                     <div style="margin-left: 110px;" class="form-field "><br>
-                                        <input   name="imagen" type="file" required>
+                                        <input   name="img" type="file" required>
                                     </div>
                                     <div class="form-field  " style="text-align:center; margin-top: 5px;">
                                         <input style="width: 200px; text-align:center;" id="nombre" name="titulo" class="input-text js-input" placeholder="Titulo" type="text" required>
@@ -65,10 +64,7 @@
                                                 }?>
                                                
                                             </select>
-
-                                        
-
-                                    </div>
+                                        </div>
                                     <div class="form-field  " style="text-align:center; margin-top: 5px;">
                                         <input style="width: 200px; text-align:center;" id="revision" name="revision" class="input-text js-input" placeholder="Revision" type="text" required>
                                     </div>
@@ -76,7 +72,7 @@
                                         <input style="width: 200px; text-align:center;" id="acceso" name="acceso" class="input-text js-input" placeholder="Acceso" type="text" required>
                                     </div>
                                     <div style="margin-top:30px; text-align: center;" class="container-ingresar">
-                                        <button type="button" class="btn">Ingresar</button>
+                                        <button type="submit" class="btn">Ingresar</button>
                                     </div>
                                     </form>
                                 </div>
@@ -99,7 +95,7 @@
                         </thead>
                         <tbody class="tbody">
                             <?php
-                            $sql = "select * from publicaciones ORDER BY id DESC"; // mejorar query falta nombre del que subio la noticia
+                            $sql = "select p.*, f.Nombre as autor from publicaciones as p INNER JOIN funcionarios as f ON p.id_academico = f.id ORDER BY p.id DESC"; // mejorar query falta nombre del que subio la noticia
                             $resultado = mysqli_query($conexion, $sql);
                             while ($mostrar = mysqli_fetch_array($resultado)) {
                             ?>
@@ -122,8 +118,8 @@
                                     </td>
                                     <td>
                                         <div class="btn-group btn-group-sm" style="text-align: center;" role="group">
-                                            <a class="btn btn-secondary"style="color:seagreen;" href="../database/publicacion/modificar.php"><i class="bi bi-pencil"></i></a>
-                                            <a class="btn btn-danger" href="../database/publicacion/eliminar.php"><i class="bi bi-x-circle"></i></a>
+                                            <a class="btn btn-secondary"style="color:seagreen;" href="../dashboard/modificarP.php?id=<?php echo $mostrar['id']; ?>"><i class="bi bi-pencil"></i></a>
+                                            <a class="btn btn-danger" href="../database/publicacion/eliminar.php?id=<?php echo $mostrar['id']; ?>"><i class="bi bi-x-circle"></i></a>
                                         </div>
                                     </td>
                                 </tr>

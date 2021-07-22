@@ -43,20 +43,20 @@
                                  <div class="modal-body">
                                     <form action="../database/proyectos/crear.php" method="POST" enctype="multipart/form-data">
                                      <div style="margin-left: 110px;" class="form-field "><br>
-                                         <input   name="imagen" type="file" required>
+                                         <input   name="img" type="file" required>
                                     </div>
                                     <div class="form-field  " style="text-align:center; margin-top: 5px;">
                                         <input style="width: 200px; text-align:center;" id="nombre" name="nombre" class="input-text js-input" placeholder="Nombre" type="text" required>
                      
                                     </div>
                                     <div class="form-field  " style="text-align:center; margin-top: 5px;">
-                                        <input style="width: 200px; text-align:center;" id="añoo" name="año" class="input-text js-input" placeholder="Año" type="text" required>
+                                        <input style="width: 200px; text-align:center;" id="año" name="año" class="input-text js-input" placeholder="Año" type="text" required>
                                     </div>
                                     <div class="form-field  " style="text-align:center; margin-top: 5px;">
                                         <input style="width: 200px; text-align:center;" id="link" name="link" class="input-text js-input" placeholder="Link" type="text" required>
                                     </div>
                                     <div style="margin-top:30px; text-align: center;" class="container-ingresar">
-                                        <button type="button" class="btn">Ingresar</button>
+                                        <button type="submit" class="btn">Ingresar</button>
                                     </div>
                                 </form>
                                 </div>
@@ -94,8 +94,8 @@
                                     </td>
                                     <td>
                                         <div class="btn-group btn-group-sm" style="text-align: center;" role="group">
-                                            <a class="btn btn-secondary"style="color:seagreen;" href="../database/proyectos/modificar.php"><i class="bi bi-pencil"></i></a>
-                                            <a class="btn btn-danger" href="../database/proyectos/eliminar.php"><i class="bi bi-x-circle"></i></a>
+                                            <a class="btn btn-secondary"style="color:seagreen;" href="../dashboard/modificarPR.php?id=<?php echo $mostrar['id']; ?>"><i class="bi bi-pencil"></i></a>
+                                            <a class="btn btn-danger" href="../database/proyectos/eliminar.php?id=<?php echo $mostrar['id']; ?>"><i class="bi bi-x-circle"></i></a>
                                         </div>
                                     </td>
                                 </tr>

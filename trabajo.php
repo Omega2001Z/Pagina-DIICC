@@ -43,7 +43,7 @@
                                 <div class="col-md-4 col-sm-6 col-xs-12">
                                     <div class="single-blog mb-60">
                                         <div class="blog-img">
-                                            <a href="postular-trabajo.php?id=%s"><img src="data:image/jpg;base64,%s" alt="blog"></a>
+                                            <a href="postular-trabajo.php?id=%s"><img src="%s" alt="blog"></a>
                                             <div class="blog-hover">
                                                 <i class="fa fa-link"></i>
                                             </div>
@@ -63,7 +63,7 @@
                                 </div>
                                 ',
                                 $mostrar['id'],
-                                base64_encode($mostrar["imagen"]),
+                                fromroot($file, $mostrar["img_path"], true),
                                 strftime('Publicado el %d/%m/%Y a las %I:%M %p', strtotime($mostrar['fecha'])),
                                 $mostrar['cargo'],
                                 $mostrar['id'],

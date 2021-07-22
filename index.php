@@ -9,9 +9,6 @@
     include_once "include/functions.php";
     include_once "include/head.php";
 ?>
-<head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-</head>
 <body>
 
     <body>
@@ -107,7 +104,7 @@
                                 <a class="card mb-3" style="width: 100%; height: 200px;" <?php echo sprintf('href="noticia.php?id=%s"', $mostrar['id']);?>>
                                     <div class="row w-100">
                                         <div class="col-md-3">
-                                            <img style="width: 200px; height: 200px;" src="data:image/jpg;base64,<?php echo base64_encode($mostrar["imagen"]); ?>">
+                                            <img style="width: 200px; height: 200px;" src=<?php echo fromroot($file, $mostrar["img_path"]); ?>>
                                         </div>
                                         <div class="col-md-9">
                                             <div class="let card-body">
@@ -346,7 +343,7 @@
                                 <div class="col-md-4 col-sm-6 col-xs-12">
                                     <div class="single-blog">
                                         <div class="blog-img">
-                                            <a href="%s"><img src="data:image/jpg;base64,%s" alt="blog"></a>
+                                            <a href="%s"><img src="%s" alt="blog"></a>
                                             <div class="blog-hover">
                                                 <a href="%s"><i class="fa fa-link"></i></a>
                                             </div>
@@ -364,7 +361,7 @@
                                 </div>
                                 ',
                                 $mostrar['acceso'],
-                                base64_encode($mostrar["imagen"]),
+                                fromroot($file, $mostrar["img_path"], true),
                                 $mostrar['acceso'],
                                 $mostrar['autor'],
                                 $mostrar['fecha'],

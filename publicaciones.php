@@ -45,7 +45,7 @@
                     <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="single-blog mb-60">
                         <div class="blog-img">
-                             <?php echo '<a href="publicaciones.php?id=' . $mostrar["id"] . '"></a>'; ?><img src="data:image/jpg;base64,<?php echo base64_encode($mostrar["imagen"]); ?>"></a>
+                             <?php echo '<a href="publicaciones.php?id=' . $mostrar["id"] . '"></a>'; ?><img src=<?php echo fromroot($file, $mostrar["img_path"]); ?>></a>
                             <div class="blog-hover">
                                 <i class="fa fa-link"></i>
                             </div>

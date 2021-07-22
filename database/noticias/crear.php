@@ -5,7 +5,6 @@ include_once "../../include/functions.php";
 include_once "../../config/config.php";
 
 
-$id = $_POST['id'];
 $image = "";
 
 if (!empty($_FILES['img'])){
@@ -34,8 +33,5 @@ $sql = sprintf($sql, $_POST['titulo'], $_POST['descripcion'], $image, $_SESSION[
 echo $sql;
 $result = $conexion->query($sql);
 
-#header(sprintf('Location:%s', fromroot($file, "dashboard/AdminGestorNoticias.php", True)));
-?>
-<?php
-
+header(sprintf('Location:%s', fromroot($file, "dashboard/AdminGestorNoticias.php", True)));
 ?>

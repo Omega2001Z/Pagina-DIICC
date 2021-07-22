@@ -4,8 +4,6 @@ $file = __FILE__;
 include_once "../../include/functions.php";
 include_once "../../config/config.php";
 
-
-$id = $_POST['id'];
 $image = "";
 
 if (!empty($_FILES['img'])){
@@ -15,7 +13,7 @@ if (!empty($_FILES['img'])){
 	$file_tmp = $_FILES['img']['tmp_name'];
 	$file_type = $_FILES['img']['type'];
 	$file_ext = strtolower(end(explode('.', $_FILES['img']['name'])));
-	$file_path = wp_normalize_path($_SESSION['root']."/img/upload/trabajos/").$file_name;
+	$file_path = wp_normalize_path($_SESSION['root']."/img/upload/funcionarios/").$file_name;
 
 	$extensions = array("jpeg", "jpg", "png");
 
@@ -25,14 +23,14 @@ if (!empty($_FILES['img'])){
 
 	if (empty($errors) == true) {
 		copy($file_tmp, $file_path);
-		$image = "img/upload/trabajos/" . $file_name;
+		$image = "img/upload/funcionarios/" . $file_name;
 	}
 }
 
-$sql = 'INSERT INTO trabajos(cargo,empresa,descripcion,ciudad,img_path ) VALUES (\'%s\', \'%s\', \'%s\', \'%s\')';
-$sql = sprintf($sql, $_POST['titulo'], $_POST['empresa'],$_POST['descripcion'],$_POST['ciudad'], $image);
+$sql = 'INSERT INTO funcionarios(Nombre,img_path,correo,cargo,es_academico) VALUES (\'%s\', \'%s\', \'%s\', \'%s\', \'%s\')';
+$sql = sprintf($sql, $_POST['nombre'], $image,$_POST['correo'],$_POST['cargo'],0);
 echo $sql;
 $result = $conexion->query($sql);
 
-header(sprintf('Location:%s', fromroot($file, "dashboard/AdminGestorBT.php", True)));
+header(sprintf('Location:%s', fromroot($file, "dashboard/AdminGestorFuncionarios.php", True)));
 ?>

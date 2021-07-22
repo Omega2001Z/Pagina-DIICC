@@ -22,27 +22,49 @@ include_once "../include/dashboard/head.php";
                 <div class="container-Noticias">
                     <div class="container-formulario">
                         <?php
-                        $sql = sprintf("select * from proyectos where id=%s", $_GET['id']);
+                        $sql = sprintf("select * from eventos where id=%s", $_GET['id']);
                         $resultado = mysqli_query($conexion, $sql);
                         $mostrar = mysqli_fetch_array($resultado);
                         ?>
                         <form class="form" action="../database/proyectos/modificar.php" method="post" enctype="multipart/form-data">
                             <input type="hidden" name='id' <?php echo sprintf('value="%s"', $_GET['id']); ?>>
                             <div class="input-group">
-                                <input class="form-control" type="file" name="img">
-                                <span class="input-group-addon" id="basic-addon1"><i class="bi bi-file-image"></i></span>
-                            </div>
-                            <div class="input-group">
                                 <span class="input-group-addon" id="basic-addon2">@</span>
                                 <input type="text" name='nombre' class="form-control" placeholder="Nombre" aria-describedby="basic-addon1" <?php echo sprintf('value="%s"',  $mostrar['nombre']); ?>>
                             </div>
                            <div class="input-group">
                                 <span class="input-group-addon" id="basic-addon3"><i class="bi bi-paint-bucket"></i></span>
-                                <input  class="form-control" name="año" placeholder="Año" <?php echo sprintf('value="%s"',  strftime('%I:%M %p %d/%m/%Y', strtotime($mostrar['year']))) ?>>
+                                <input  class="form-control" name="fecha" placeholder="fecha" <?php echo sprintf('value="%s"',  strftime('%I:%M %p %d/%m/%Y', strtotime($mostrar['fecha']))) ?>>
                             </div>
-                             <div class="input-group">
+                             <div class="input-group" style="width: 100%;">
+                                <select style="width: 100%; text-align:center;" class="form-select" name="hora_inicio" id="hora_inicio" aria-label="Floating label select example">
+                                    <option value="8:00" selected>8:00</option>
+                                    <?php
+                                        for ($i = 9; $i < 24; ++$i) {
+                                            $hour = "$i:00";
+                                            if ($mostrar['hora_inicio'] == $hour){
+                                                echo sprintf('<option value="%s">%s</option>', $hour, $hour);
+                                            }else{
+                                                echo sprintf('<option value="%s">%s</option>', $hour, $hour);
+                                            }
+                                        }
+                                    ?>
+                                </select>
+                            </div>
+                            <div class="input-group" style="width: 100%;">
+                                <select style="width: 100%; text-align:center;" class="form-select" name="hora_termino" id="hora_termino" aria-label="Floating label select example">
+                                    <option style="text-align: center;" value="8:00" selected>8:00</option>
+                                    <?php
+                                        for ($i = 9; $i < 24; ++$i) {
+                                            $hour = "$i:00";
+                                            echo sprintf('<option value="%s">%s</option>', $hour, $hour);
+                                        }
+                                    ?>
+                                </select>
+                            </div>
+                            <div class="input-group">
                                 <span class="input-group-addon" id="basic-addon4"><i class="bi bi-paint-bucket"></i></span>
-                                <input  class="form-control" name="link" placeholder="Link" <?php echo sprintf('value="%s"',  $mostrar['link']); ?>>
+                                <input  class="form-control" name="lugar" placeholder="lugar" <?php echo sprintf('value="%s"',  $mostrar['lugar']); ?>>
                             </div>
 
                             <div class="container-bttn p-3 row">

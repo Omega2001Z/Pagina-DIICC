@@ -8,7 +8,7 @@
         </a>
         <nav class="menu">
             <a href=<?php echo fromroot($file, "dashboard/"); ?>>Inicio</a>
-            <a href="#">Mi perfil</a>
+            <a href=<?php echo fromroot($file, "dashboard/Perfil.php"); ?>>Mi Perfil</a>
             <a href=<?php echo fromroot($file, "database/logout.php"); ?>>Desconectarse</a>
         </nav>
     </div>
